@@ -1,0 +1,7067 @@
+{
+  "tasks_scored": 180,
+  "predictions_provided": 180,
+  "mean_header_accuracy": 0.8527777777777777,
+  "header_accuracy_ci95": [
+    0.8153,
+    0.8875
+  ],
+  "mean_casing_f1": 0.7690889049222382,
+  "casing_f1_ci95": [
+    0.724,
+    0.8131
+  ],
+  "lot_positive_tasks": 150,
+  "mean_lot_recall": 0.68,
+  "lot_recall_ci95": [
+    0.6144,
+    0.7444
+  ],
+  "mean_formation_tops_f1": 0.43150594874844395,
+  "formation_tops_f1_ci95": [
+    0.3884,
+    0.4727
+  ],
+  "dst_positive_tasks": 24,
+  "mean_dst_f1_non_empty": 0.6354166666666666,
+  "dst_f1_non_empty_ci95": [
+    0.4375,
+    0.8229
+  ],
+  "per_task": [
+    {
+      "task_id": "ncs_eval_5327",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1": 0.6666666666666666
+        },
+        "lot_matched": 1,
+        "lot_expected": 2,
+        "lot_recall": 0.5
+      },
+      "formation_tops": {
+        "matched": 11,
+        "predicted": 13,
+        "expected": 17,
+        "precision": 0.8461538461538461,
+        "recall": 0.6470588235294118,
+        "f1": 0.7333333333333334
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_5386",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 3,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 16,
+        "predicted": 16,
+        "expected": 24,
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "f1": 0.8
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_5295",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.5,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 3,
+        "lot_expected": 3,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 24,
+        "predicted": 28,
+        "expected": 29,
+        "precision": 0.8571428571428571,
+        "recall": 0.8275862068965517,
+        "f1": 0.8421052631578947
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 5,
+        "expected": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_5248",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": false,
+        "total_depth_md_rkb_m": false,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 0,
+          "predicted": 3,
+          "expected": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 3,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 22,
+        "predicted": 22,
+        "expected": 23,
+        "precision": 1.0,
+        "recall": 0.9565217391304348,
+        "f1": 0.9777777777777777
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_5282",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": false,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 0,
+          "predicted": 3,
+          "expected": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 2,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 10,
+        "predicted": 11,
+        "expected": 16,
+        "precision": 0.9090909090909091,
+        "recall": 0.625,
+        "f1": 0.7407407407407406
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_5175",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 5,
+          "predicted": 5,
+          "expected": 5,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 3,
+        "lot_expected": 3,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 17,
+        "predicted": 32,
+        "expected": 27,
+        "precision": 0.53125,
+        "recall": 0.6296296296296297,
+        "f1": 0.5762711864406779
+      },
+      "dst": {
+        "matched": 2,
+        "predicted": 2,
+        "expected": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_5214",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 5,
+          "predicted": 5,
+          "expected": 5,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 3,
+        "lot_recall": 0.3333333333333333
+      },
+      "formation_tops": {
+        "matched": 2,
+        "predicted": 14,
+        "expected": 17,
+        "precision": 0.14285714285714285,
+        "recall": 0.11764705882352941,
+        "f1": 0.12903225806451615
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 6,
+        "expected": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_6423",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1": 0.6666666666666666
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 11,
+        "predicted": 20,
+        "expected": 20,
+        "precision": 0.55,
+        "recall": 0.55,
+        "f1": 0.55
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 2,
+        "expected": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_5135",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": false,
+        "total_depth_md_rkb_m": false,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 0,
+          "predicted": 0,
+          "expected": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 2,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4927",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 1,
+          "predicted": 6,
+          "expected": 6,
+          "precision": 0.16666666666666666,
+          "recall": 0.16666666666666666,
+          "f1": 0.16666666666666666
+        },
+        "lot_matched": 0,
+        "lot_expected": 4,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 1,
+        "predicted": 14,
+        "expected": 29,
+        "precision": 0.07142857142857142,
+        "recall": 0.034482758620689655,
+        "f1": 0.046511627906976744
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_5063",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 5,
+          "predicted": 5,
+          "expected": 5,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 3,
+        "lot_recall": 0.3333333333333333
+      },
+      "formation_tops": {
+        "matched": 8,
+        "predicted": 8,
+        "expected": 25,
+        "precision": 1.0,
+        "recall": 0.32,
+        "f1": 0.48484848484848486
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 1,
+        "expected": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_5051",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 2,
+        "lot_recall": 0.5
+      },
+      "formation_tops": {
+        "matched": 10,
+        "predicted": 11,
+        "expected": 18,
+        "precision": 0.9090909090909091,
+        "recall": 0.5555555555555556,
+        "f1": 0.6896551724137931
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7550",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 3,
+          "expected": 4,
+          "precision": 0.6666666666666666,
+          "recall": 0.5,
+          "f1": 0.5714285714285715
+        },
+        "lot_matched": 2,
+        "lot_expected": 3,
+        "lot_recall": 0.6666666666666666
+      },
+      "formation_tops": {
+        "matched": 7,
+        "predicted": 8,
+        "expected": 10,
+        "precision": 0.875,
+        "recall": 0.7,
+        "f1": 0.7777777777777777
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_5000",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 20,
+        "expected": 15,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4950",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 12,
+        "predicted": 18,
+        "expected": 21,
+        "precision": 0.6666666666666666,
+        "recall": 0.5714285714285714,
+        "f1": 0.6153846153846153
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4928",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 11,
+        "predicted": 20,
+        "expected": 29,
+        "precision": 0.55,
+        "recall": 0.3793103448275862,
+        "f1": 0.4489795918367347
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 3,
+        "expected": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4854",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75
+        },
+        "lot_matched": 2,
+        "lot_expected": 3,
+        "lot_recall": 0.6666666666666666
+      },
+      "formation_tops": {
+        "matched": 16,
+        "predicted": 18,
+        "expected": 25,
+        "precision": 0.8888888888888888,
+        "recall": 0.64,
+        "f1": 0.7441860465116279
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7616",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 14,
+        "predicted": 26,
+        "expected": 31,
+        "precision": 0.5384615384615384,
+        "recall": 0.45161290322580644,
+        "f1": 0.4912280701754386
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7646",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 7,
+          "precision": 1.0,
+          "recall": 0.5714285714285714,
+          "f1": 0.7272727272727273
+        },
+        "lot_matched": 0,
+        "lot_expected": 5,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 12,
+        "predicted": 16,
+        "expected": 24,
+        "precision": 0.75,
+        "recall": 0.5,
+        "f1": 0.6
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7015",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": false,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75
+        },
+        "lot_matched": 3,
+        "lot_expected": 3,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 8,
+        "predicted": 12,
+        "expected": 14,
+        "precision": 0.6666666666666666,
+        "recall": 0.5714285714285714,
+        "f1": 0.6153846153846153
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_6745",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 0,
+          "predicted": 4,
+          "expected": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 1,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 7,
+        "predicted": 7,
+        "expected": 17,
+        "precision": 1.0,
+        "recall": 0.4117647058823529,
+        "f1": 0.5833333333333334
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_6588",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 5,
+          "precision": 0.75,
+          "recall": 0.6,
+          "f1": 0.6666666666666665
+        },
+        "lot_matched": 1,
+        "lot_expected": 3,
+        "lot_recall": 0.3333333333333333
+      },
+      "formation_tops": {
+        "matched": 11,
+        "predicted": 12,
+        "expected": 19,
+        "precision": 0.9166666666666666,
+        "recall": 0.5789473684210527,
+        "f1": 0.7096774193548387
+      },
+      "dst": {
+        "matched": 1,
+        "predicted": 1,
+        "expected": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_5921",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 4,
+          "expected": 2,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 4,
+        "predicted": 7,
+        "expected": 19,
+        "precision": 0.5714285714285714,
+        "recall": 0.21052631578947367,
+        "f1": 0.3076923076923077
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_6332",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75
+        },
+        "lot_matched": 2,
+        "lot_expected": 3,
+        "lot_recall": 0.6666666666666666
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 2,
+        "expected": 29,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4278",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.5,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 0,
+          "predicted": 0,
+          "expected": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 2,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 2,
+        "predicted": 10,
+        "expected": 11,
+        "precision": 0.2,
+        "recall": 0.18181818181818182,
+        "f1": 0.1904761904761905
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4710",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1": 0.8
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 6,
+        "predicted": 8,
+        "expected": 16,
+        "precision": 0.75,
+        "recall": 0.375,
+        "f1": 0.5
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4765",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 4,
+        "predicted": 14,
+        "expected": 11,
+        "precision": 0.2857142857142857,
+        "recall": 0.36363636363636365,
+        "f1": 0.32
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4716",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 1,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "lot_matched": 0,
+        "lot_expected": 1,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 3,
+        "predicted": 8,
+        "expected": 10,
+        "precision": 0.375,
+        "recall": 0.3,
+        "f1": 0.33333333333333326
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4668",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 10,
+        "predicted": 14,
+        "expected": 21,
+        "precision": 0.7142857142857143,
+        "recall": 0.47619047619047616,
+        "f1": 0.5714285714285714
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4612",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1": 0.6666666666666666
+        },
+        "lot_matched": 1,
+        "lot_expected": 2,
+        "lot_recall": 0.5
+      },
+      "formation_tops": {
+        "matched": 22,
+        "predicted": 25,
+        "expected": 27,
+        "precision": 0.88,
+        "recall": 0.8148148148148148,
+        "f1": 0.8461538461538461
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7709",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 1,
+        "predicted": 11,
+        "expected": 10,
+        "precision": 0.09090909090909091,
+        "recall": 0.1,
+        "f1": 0.09523809523809525
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_5683",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 3,
+        "lot_expected": 3,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 22,
+        "predicted": 24,
+        "expected": 25,
+        "precision": 0.9166666666666666,
+        "recall": 0.88,
+        "f1": 0.8979591836734694
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4602",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75
+        },
+        "lot_matched": 2,
+        "lot_expected": 3,
+        "lot_recall": 0.6666666666666666
+      },
+      "formation_tops": {
+        "matched": 7,
+        "predicted": 9,
+        "expected": 12,
+        "precision": 0.7777777777777778,
+        "recall": 0.5833333333333334,
+        "f1": 0.6666666666666666
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4630",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 8,
+        "predicted": 13,
+        "expected": 17,
+        "precision": 0.6153846153846154,
+        "recall": 0.47058823529411764,
+        "f1": 0.5333333333333333
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4636",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 9,
+        "expected": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4589",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 3,
+        "lot_expected": 3,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 17,
+        "predicted": 19,
+        "expected": 26,
+        "precision": 0.8947368421052632,
+        "recall": 0.6538461538461539,
+        "f1": 0.7555555555555555
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4561",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 3,
+        "lot_expected": 3,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 21,
+        "predicted": 21,
+        "expected": 28,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571428571428571
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4541",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 5,
+          "expected": 4,
+          "precision": 0.6,
+          "recall": 0.75,
+          "f1": 0.6666666666666665
+        },
+        "lot_matched": 1,
+        "lot_expected": 2,
+        "lot_recall": 0.5
+      },
+      "formation_tops": {
+        "matched": 16,
+        "predicted": 19,
+        "expected": 25,
+        "precision": 0.8421052631578947,
+        "recall": 0.64,
+        "f1": 0.7272727272727272
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4441",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 3,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571
+        },
+        "lot_matched": 1,
+        "lot_expected": 2,
+        "lot_recall": 0.5
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 1,
+        "expected": 11,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 1,
+        "expected": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4521",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 3,
+        "lot_expected": 3,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 9,
+        "predicted": 9,
+        "expected": 12,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571428571428571
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4492",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 13,
+        "predicted": 17,
+        "expected": 24,
+        "precision": 0.7647058823529411,
+        "recall": 0.5416666666666666,
+        "f1": 0.6341463414634146
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4465",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 3,
+        "predicted": 13,
+        "expected": 10,
+        "precision": 0.23076923076923078,
+        "recall": 0.3,
+        "f1": 0.2608695652173913
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4433",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75
+        },
+        "lot_matched": 2,
+        "lot_expected": 3,
+        "lot_recall": 0.6666666666666666
+      },
+      "formation_tops": {
+        "matched": 3,
+        "predicted": 7,
+        "expected": 26,
+        "precision": 0.42857142857142855,
+        "recall": 0.11538461538461539,
+        "f1": 0.18181818181818182
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4428",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 5,
+          "expected": 5,
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1": 0.8000000000000002
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 18,
+        "predicted": 20,
+        "expected": 27,
+        "precision": 0.9,
+        "recall": 0.6666666666666666,
+        "f1": 0.7659574468085106
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 1,
+        "expected": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4463",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": false,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 5,
+          "predicted": 5,
+          "expected": 5,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 3,
+        "lot_recall": 0.6666666666666666
+      },
+      "formation_tops": {
+        "matched": 12,
+        "predicted": 17,
+        "expected": 38,
+        "precision": 0.7058823529411765,
+        "recall": 0.3157894736842105,
+        "f1": 0.43636363636363634
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4427",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75
+        },
+        "lot_matched": 2,
+        "lot_expected": 3,
+        "lot_recall": 0.6666666666666666
+      },
+      "formation_tops": {
+        "matched": 7,
+        "predicted": 12,
+        "expected": 25,
+        "precision": 0.5833333333333334,
+        "recall": 0.28,
+        "f1": 0.3783783783783784
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7681",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1": 0.6666666666666666
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 8,
+        "predicted": 11,
+        "expected": 12,
+        "precision": 0.7272727272727273,
+        "recall": 0.6666666666666666,
+        "f1": 0.6956521739130435
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_5705",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 5,
+          "expected": 4,
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.888888888888889
+        },
+        "lot_matched": 0,
+        "lot_expected": 3,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 10,
+        "predicted": 19,
+        "expected": 19,
+        "precision": 0.5263157894736842,
+        "recall": 0.5263157894736842,
+        "f1": 0.5263157894736842
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 3,
+        "expected": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4699",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 1,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "lot_matched": 0,
+        "lot_expected": 1,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 12,
+        "predicted": 20,
+        "expected": 25,
+        "precision": 0.6,
+        "recall": 0.48,
+        "f1": 0.5333333333333332
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7291",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 5,
+          "predicted": 5,
+          "expected": 5,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 14,
+        "predicted": 19,
+        "expected": 27,
+        "precision": 0.7368421052631579,
+        "recall": 0.5185185185185185,
+        "f1": 0.6086956521739131
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4438",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 5,
+        "predicted": 12,
+        "expected": 17,
+        "precision": 0.4166666666666667,
+        "recall": 0.29411764705882354,
+        "f1": 0.3448275862068966
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4425",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 0,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 9,
+        "predicted": 17,
+        "expected": 22,
+        "precision": 0.5294117647058824,
+        "recall": 0.4090909090909091,
+        "f1": 0.46153846153846156
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4423",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 11,
+        "predicted": 14,
+        "expected": 14,
+        "precision": 0.7857142857142857,
+        "recall": 0.7857142857142857,
+        "f1": 0.7857142857142857
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4391",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 1,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 0.3333333333333333,
+          "recall": 0.3333333333333333,
+          "f1": 0.3333333333333333
+        },
+        "lot_matched": 0,
+        "lot_expected": 1,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 4,
+        "predicted": 6,
+        "expected": 14,
+        "precision": 0.6666666666666666,
+        "recall": 0.2857142857142857,
+        "f1": 0.4
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 2,
+        "expected": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4416",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 8,
+        "predicted": 14,
+        "expected": 17,
+        "precision": 0.5714285714285714,
+        "recall": 0.47058823529411764,
+        "f1": 0.5161290322580646
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4408",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.5,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 7,
+        "predicted": 13,
+        "expected": 17,
+        "precision": 0.5384615384615384,
+        "recall": 0.4117647058823529,
+        "f1": 0.4666666666666667
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4385",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 2,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 10,
+        "predicted": 14,
+        "expected": 41,
+        "precision": 0.7142857142857143,
+        "recall": 0.24390243902439024,
+        "f1": 0.36363636363636365
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_5995",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 1,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "lot_matched": 1,
+        "lot_expected": 2,
+        "lot_recall": 0.5
+      },
+      "formation_tops": {
+        "matched": 12,
+        "predicted": 17,
+        "expected": 30,
+        "precision": 0.7058823529411765,
+        "recall": 0.4,
+        "f1": 0.5106382978723405
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4055",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 3,
+        "lot_expected": 3,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 13,
+        "predicted": 22,
+        "expected": 34,
+        "precision": 0.5909090909090909,
+        "recall": 0.38235294117647056,
+        "f1": 0.46428571428571425
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4344",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 7,
+        "predicted": 12,
+        "expected": 14,
+        "precision": 0.5833333333333334,
+        "recall": 0.5,
+        "f1": 0.5384615384615384
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4297",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 5,
+        "predicted": 8,
+        "expected": 12,
+        "precision": 0.625,
+        "recall": 0.4166666666666667,
+        "f1": 0.5
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3322",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 5,
+          "predicted": 5,
+          "expected": 5,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 3,
+        "lot_expected": 3,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 22,
+        "predicted": 26,
+        "expected": 30,
+        "precision": 0.8461538461538461,
+        "recall": 0.7333333333333333,
+        "f1": 0.7857142857142856
+      },
+      "dst": {
+        "matched": 3,
+        "predicted": 3,
+        "expected": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4321",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "lot_matched": 1,
+        "lot_expected": 3,
+        "lot_recall": 0.3333333333333333
+      },
+      "formation_tops": {
+        "matched": 17,
+        "predicted": 21,
+        "expected": 26,
+        "precision": 0.8095238095238095,
+        "recall": 0.6538461538461539,
+        "f1": 0.7234042553191489
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4262",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "lot_matched": 0,
+        "lot_expected": 3,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 11,
+        "predicted": 15,
+        "expected": 23,
+        "precision": 0.7333333333333333,
+        "recall": 0.4782608695652174,
+        "f1": 0.5789473684210527
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4306",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 15,
+        "predicted": 19,
+        "expected": 24,
+        "precision": 0.7894736842105263,
+        "recall": 0.625,
+        "f1": 0.6976744186046512
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4273",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1": 0.6666666666666666
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 9,
+        "predicted": 12,
+        "expected": 19,
+        "precision": 0.75,
+        "recall": 0.47368421052631576,
+        "f1": 0.5806451612903226
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 2,
+        "expected": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4209",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": false,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.25,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 16,
+        "predicted": 18,
+        "expected": 26,
+        "precision": 0.8888888888888888,
+        "recall": 0.6153846153846154,
+        "f1": 0.7272727272727274
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4247",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 53,
+        "expected": 29,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4244",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 11,
+        "predicted": 12,
+        "expected": 16,
+        "precision": 0.9166666666666666,
+        "recall": 0.6875,
+        "f1": 0.7857142857142857
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3391",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 5,
+          "expected": 4,
+          "precision": 0.8,
+          "recall": 1.0,
+          "f1": 0.888888888888889
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 1,
+        "predicted": 18,
+        "expected": 23,
+        "precision": 0.05555555555555555,
+        "recall": 0.043478260869565216,
+        "f1": 0.04878048780487805
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4275",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 3,
+        "predicted": 3,
+        "expected": 11,
+        "precision": 1.0,
+        "recall": 0.2727272727272727,
+        "f1": 0.42857142857142855
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4213",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1": 0.6666666666666666
+        },
+        "lot_matched": 1,
+        "lot_expected": 2,
+        "lot_recall": 0.5
+      },
+      "formation_tops": {
+        "matched": 8,
+        "predicted": 9,
+        "expected": 14,
+        "precision": 0.8888888888888888,
+        "recall": 0.5714285714285714,
+        "f1": 0.6956521739130435
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_6185",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 11,
+        "predicted": 15,
+        "expected": 13,
+        "precision": 0.7333333333333333,
+        "recall": 0.8461538461538461,
+        "f1": 0.7857142857142856
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_6261",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 1,
+          "predicted": 2,
+          "expected": 1,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 8,
+        "predicted": 11,
+        "expected": 14,
+        "precision": 0.7272727272727273,
+        "recall": 0.5714285714285714,
+        "f1": 0.64
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7749",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": false,
+        "total_depth_md_rkb_m": false,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 0,
+          "predicted": 0,
+          "expected": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 3,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 20,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4172",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 3,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 15,
+        "predicted": 16,
+        "expected": 23,
+        "precision": 0.9375,
+        "recall": 0.6521739130434783,
+        "f1": 0.7692307692307693
+      },
+      "dst": {
+        "matched": 1,
+        "predicted": 1,
+        "expected": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4122",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 5,
+          "expected": 5,
+          "precision": 0.6,
+          "recall": 0.6,
+          "f1": 0.6
+        },
+        "lot_matched": 2,
+        "lot_expected": 3,
+        "lot_recall": 0.6666666666666666
+      },
+      "formation_tops": {
+        "matched": 16,
+        "predicted": 19,
+        "expected": 26,
+        "precision": 0.8421052631578947,
+        "recall": 0.6153846153846154,
+        "f1": 0.7111111111111111
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4145",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 11,
+        "expected": 14,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 1,
+        "expected": 0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7763",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1": 0.6666666666666666
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 13,
+        "predicted": 14,
+        "expected": 20,
+        "precision": 0.9285714285714286,
+        "recall": 0.65,
+        "f1": 0.7647058823529412
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3941",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 4,
+        "predicted": 10,
+        "expected": 9,
+        "precision": 0.4,
+        "recall": 0.4444444444444444,
+        "f1": 0.4210526315789474
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4141",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 2,
+        "lot_recall": 0.5
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 10,
+        "expected": 12,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4173",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 9,
+        "expected": 14,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4129",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": false,
+        "total_depth_md_rkb_m": false,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 0,
+          "predicted": 0,
+          "expected": 4,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 4,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 3,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4147",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 2,
+        "lot_recall": 0.5
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 18,
+        "expected": 29,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4109",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 4,
+        "predicted": 14,
+        "expected": 12,
+        "precision": 0.2857142857142857,
+        "recall": 0.3333333333333333,
+        "f1": 0.30769230769230765
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7962",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 13,
+        "predicted": 20,
+        "expected": 25,
+        "precision": 0.65,
+        "recall": 0.52,
+        "f1": 0.5777777777777778
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4128",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 2,
+        "lot_recall": 0.5
+      },
+      "formation_tops": {
+        "matched": 12,
+        "predicted": 20,
+        "expected": 18,
+        "precision": 0.6,
+        "recall": 0.6666666666666666,
+        "f1": 0.631578947368421
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4117",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": false,
+        "total_depth_md_rkb_m": false,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 0,
+          "predicted": 0,
+          "expected": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 1,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 16,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4059",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.5,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 7,
+        "predicted": 11,
+        "expected": 13,
+        "precision": 0.6363636363636364,
+        "recall": 0.5384615384615384,
+        "f1": 0.5833333333333334
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3260",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1": 0.6666666666666666
+        },
+        "lot_matched": 0,
+        "lot_expected": 1,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 8,
+        "predicted": 11,
+        "expected": 19,
+        "precision": 0.7272727272727273,
+        "recall": 0.42105263157894735,
+        "f1": 0.5333333333333333
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4054",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 3,
+        "lot_recall": 0.6666666666666666
+      },
+      "formation_tops": {
+        "matched": 9,
+        "predicted": 16,
+        "expected": 24,
+        "precision": 0.5625,
+        "recall": 0.375,
+        "f1": 0.45
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7527",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 0,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 7,
+        "predicted": 9,
+        "expected": 13,
+        "precision": 0.7777777777777778,
+        "recall": 0.5384615384615384,
+        "f1": 0.6363636363636364
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3143",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": false,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.5,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 4,
+          "expected": 3,
+          "precision": 0.5,
+          "recall": 0.6666666666666666,
+          "f1": 0.5714285714285715
+        },
+        "lot_matched": 1,
+        "lot_expected": 2,
+        "lot_recall": 0.5
+      },
+      "formation_tops": {
+        "matched": 5,
+        "predicted": 17,
+        "expected": 9,
+        "precision": 0.29411764705882354,
+        "recall": 0.5555555555555556,
+        "f1": 0.3846153846153846
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_8005",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 1,
+          "predicted": 2,
+          "expected": 3,
+          "precision": 0.5,
+          "recall": 0.3333333333333333,
+          "f1": 0.4
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 1,
+        "predicted": 2,
+        "expected": 30,
+        "precision": 0.5,
+        "recall": 0.03333333333333333,
+        "f1": 0.0625
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7317",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "lot_matched": 0,
+        "lot_expected": 1,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 1,
+        "expected": 11,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7666",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1": 0.6666666666666666
+        },
+        "lot_matched": 1,
+        "lot_expected": 2,
+        "lot_recall": 0.5
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 8,
+        "expected": 11,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_5980",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 5,
+          "expected": 5,
+          "precision": 0.6,
+          "recall": 0.6,
+          "f1": 0.6
+        },
+        "lot_matched": 0,
+        "lot_expected": 1,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 19,
+        "predicted": 21,
+        "expected": 28,
+        "precision": 0.9047619047619048,
+        "recall": 0.6785714285714286,
+        "f1": 0.7755102040816326
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 1,
+        "expected": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_5824",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 1,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 13,
+        "predicted": 14,
+        "expected": 21,
+        "precision": 0.9285714285714286,
+        "recall": 0.6190476190476191,
+        "f1": 0.742857142857143
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4845",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": false,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 1,
+          "predicted": 4,
+          "expected": 2,
+          "precision": 0.25,
+          "recall": 0.5,
+          "f1": 0.3333333333333333
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 6,
+        "predicted": 17,
+        "expected": 15,
+        "precision": 0.35294117647058826,
+        "recall": 0.4,
+        "f1": 0.37500000000000006
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4761",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 3,
+        "lot_recall": 0.6666666666666666
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 21,
+        "expected": 28,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3878",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 5,
+          "expected": 5,
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1": 0.8000000000000002
+        },
+        "lot_matched": 3,
+        "lot_expected": 3,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 20,
+        "predicted": 22,
+        "expected": 24,
+        "precision": 0.9090909090909091,
+        "recall": 0.8333333333333334,
+        "f1": 0.8695652173913043
+      },
+      "dst": {
+        "matched": 1,
+        "predicted": 1,
+        "expected": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3885",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 15,
+        "expected": 19,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3756",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": false,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "lot_matched": 0,
+        "lot_expected": 2,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 14,
+        "predicted": 16,
+        "expected": 25,
+        "precision": 0.875,
+        "recall": 0.56,
+        "f1": 0.6829268292682927
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3816",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 3,
+        "lot_expected": 3,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 11,
+        "predicted": 13,
+        "expected": 23,
+        "precision": 0.8461538461538461,
+        "recall": 0.4782608695652174,
+        "f1": 0.6111111111111112
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3849",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 6,
+        "predicted": 16,
+        "expected": 13,
+        "precision": 0.375,
+        "recall": 0.46153846153846156,
+        "f1": 0.41379310344827586
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3284",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 3,
+        "lot_expected": 3,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 9,
+        "predicted": 13,
+        "expected": 20,
+        "precision": 0.6923076923076923,
+        "recall": 0.45,
+        "f1": 0.5454545454545455
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3812",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 10,
+        "predicted": 11,
+        "expected": 18,
+        "precision": 0.9090909090909091,
+        "recall": 0.5555555555555556,
+        "f1": 0.6896551724137931
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3791",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 3,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 10,
+        "predicted": 16,
+        "expected": 19,
+        "precision": 0.625,
+        "recall": 0.5263157894736842,
+        "f1": 0.5714285714285714
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3759",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75
+        },
+        "lot_matched": 3,
+        "lot_expected": 3,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 5,
+        "predicted": 9,
+        "expected": 12,
+        "precision": 0.5555555555555556,
+        "recall": 0.4166666666666667,
+        "f1": 0.4761904761904762
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3781",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 1,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "lot_matched": 0,
+        "lot_expected": 1,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 3,
+        "predicted": 12,
+        "expected": 17,
+        "precision": 0.25,
+        "recall": 0.17647058823529413,
+        "f1": 0.20689655172413793
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3719",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 12,
+        "expected": 13,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_1990",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": false,
+        "total_depth_md_rkb_m": false,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 0,
+          "predicted": 0,
+          "expected": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 19,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3772",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 1,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 9,
+        "expected": 17,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3573",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": false,
+        "total_depth_md_rkb_m": false,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 0,
+          "predicted": 0,
+          "expected": 5,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 3,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 26,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3771",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 12,
+        "expected": 21,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3755",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 1,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 17,
+        "expected": 24,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3668",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75
+        },
+        "lot_matched": 2,
+        "lot_expected": 3,
+        "lot_recall": 0.6666666666666666
+      },
+      "formation_tops": {
+        "matched": 20,
+        "predicted": 25,
+        "expected": 23,
+        "precision": 0.8,
+        "recall": 0.8695652173913043,
+        "f1": 0.8333333333333333
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3627",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 1,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 6,
+        "predicted": 7,
+        "expected": 28,
+        "precision": 0.8571428571428571,
+        "recall": 0.21428571428571427,
+        "f1": 0.34285714285714286
+      },
+      "dst": {
+        "matched": 2,
+        "predicted": 2,
+        "expected": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3648",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": false,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.25,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 20,
+        "predicted": 26,
+        "expected": 30,
+        "precision": 0.7692307692307693,
+        "recall": 0.6666666666666666,
+        "f1": 0.7142857142857142
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7699",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 3,
+          "expected": 4,
+          "precision": 0.6666666666666666,
+          "recall": 0.5,
+          "f1": 0.5714285714285715
+        },
+        "lot_matched": 1,
+        "lot_expected": 2,
+        "lot_recall": 0.5
+      },
+      "formation_tops": {
+        "matched": 11,
+        "predicted": 23,
+        "expected": 20,
+        "precision": 0.4782608695652174,
+        "recall": 0.55,
+        "f1": 0.5116279069767442
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7724",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 17,
+        "predicted": 19,
+        "expected": 25,
+        "precision": 0.8947368421052632,
+        "recall": 0.68,
+        "f1": 0.7727272727272727
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7874",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 3,
+        "lot_expected": 3,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 24,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7662",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 6,
+        "predicted": 12,
+        "expected": 16,
+        "precision": 0.5,
+        "recall": 0.375,
+        "f1": 0.42857142857142855
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3578",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 19,
+        "expected": 31,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_6216",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 14,
+        "predicted": 15,
+        "expected": 17,
+        "precision": 0.9333333333333333,
+        "recall": 0.8235294117647058,
+        "f1": 0.8749999999999999
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3250",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 1,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 7,
+        "predicted": 14,
+        "expected": 21,
+        "precision": 0.5,
+        "recall": 0.3333333333333333,
+        "f1": 0.4
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7987",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 5,
+        "predicted": 10,
+        "expected": 10,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3555",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": false,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.5,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571428571428571
+        },
+        "lot_matched": 0,
+        "lot_expected": 3,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 8,
+        "expected": 15,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3407",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 3,
+        "lot_recall": 0.6666666666666666
+      },
+      "formation_tops": {
+        "matched": 27,
+        "predicted": 36,
+        "expected": 28,
+        "precision": 0.75,
+        "recall": 0.9642857142857143,
+        "f1": 0.8437499999999999
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7609",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 4,
+        "predicted": 9,
+        "expected": 11,
+        "precision": 0.4444444444444444,
+        "recall": 0.36363636363636365,
+        "f1": 0.39999999999999997
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3561",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 22,
+        "expected": 27,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3214",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 5,
+        "predicted": 12,
+        "expected": 24,
+        "precision": 0.4166666666666667,
+        "recall": 0.20833333333333334,
+        "f1": 0.2777777777777778
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7630",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 5,
+          "expected": 5,
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1": 0.8000000000000002
+        },
+        "lot_matched": 2,
+        "lot_expected": 3,
+        "lot_recall": 0.6666666666666666
+      },
+      "formation_tops": {
+        "matched": 7,
+        "predicted": 15,
+        "expected": 21,
+        "precision": 0.4666666666666667,
+        "recall": 0.3333333333333333,
+        "f1": 0.3888888888888889
+      },
+      "dst": {
+        "matched": 1,
+        "predicted": 1,
+        "expected": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3535",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 0.5,
+          "recall": 0.5,
+          "f1": 0.5
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3306",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 5,
+          "precision": 0.75,
+          "recall": 0.6,
+          "f1": 0.6666666666666665
+        },
+        "lot_matched": 2,
+        "lot_expected": 3,
+        "lot_recall": 0.6666666666666666
+      },
+      "formation_tops": {
+        "matched": 8,
+        "predicted": 17,
+        "expected": 29,
+        "precision": 0.47058823529411764,
+        "recall": 0.27586206896551724,
+        "f1": 0.34782608695652173
+      },
+      "dst": {
+        "matched": 3,
+        "predicted": 3,
+        "expected": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3524",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": false,
+        "total_depth_md_rkb_m": false,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 0,
+          "predicted": 0,
+          "expected": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3531",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 3,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 2,
+        "predicted": 6,
+        "expected": 23,
+        "precision": 0.3333333333333333,
+        "recall": 0.08695652173913043,
+        "f1": 0.13793103448275862
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7661",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 9,
+        "predicted": 10,
+        "expected": 25,
+        "precision": 0.9,
+        "recall": 0.36,
+        "f1": 0.5142857142857143
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3229",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 5,
+          "expected": 2,
+          "precision": 0.4,
+          "recall": 1.0,
+          "f1": 0.5714285714285715
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 13,
+        "predicted": 25,
+        "expected": 39,
+        "precision": 0.52,
+        "recall": 0.3333333333333333,
+        "f1": 0.40625000000000006
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3397",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 3,
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.8571428571428571
+        },
+        "lot_matched": 0,
+        "lot_expected": 1,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 8,
+        "predicted": 11,
+        "expected": 16,
+        "precision": 0.7272727272727273,
+        "recall": 0.5,
+        "f1": 0.5925925925925926
+      },
+      "dst": {
+        "matched": 1,
+        "predicted": 1,
+        "expected": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3259",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 4,
+          "expected": 3,
+          "precision": 0.5,
+          "recall": 0.6666666666666666,
+          "f1": 0.5714285714285715
+        },
+        "lot_matched": 0,
+        "lot_expected": 2,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 6,
+        "expected": 14,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7555",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 3,
+        "predicted": 3,
+        "expected": 8,
+        "precision": 1.0,
+        "recall": 0.375,
+        "f1": 0.5454545454545454
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3334",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 3,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 16,
+        "predicted": 19,
+        "expected": 32,
+        "precision": 0.8421052631578947,
+        "recall": 0.5,
+        "f1": 0.6274509803921569
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3356",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 14,
+        "predicted": 19,
+        "expected": 32,
+        "precision": 0.7368421052631579,
+        "recall": 0.4375,
+        "f1": 0.5490196078431372
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7870",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 3,
+        "lot_expected": 3,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 13,
+        "expected": 15,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3683",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 2,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 10,
+        "predicted": 19,
+        "expected": 26,
+        "precision": 0.5263157894736842,
+        "recall": 0.38461538461538464,
+        "f1": 0.4444444444444444
+      },
+      "dst": {
+        "matched": 3,
+        "predicted": 4,
+        "expected": 4,
+        "precision": 0.75,
+        "recall": 0.75,
+        "f1": 0.75
+      }
+    },
+    {
+      "task_id": "ncs_eval_7788",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 9,
+        "predicted": 10,
+        "expected": 29,
+        "precision": 0.9,
+        "recall": 0.3103448275862069,
+        "f1": 0.4615384615384615
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3202",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75
+        },
+        "lot_matched": 1,
+        "lot_expected": 3,
+        "lot_recall": 0.3333333333333333
+      },
+      "formation_tops": {
+        "matched": 3,
+        "predicted": 9,
+        "expected": 16,
+        "precision": 0.3333333333333333,
+        "recall": 0.1875,
+        "f1": 0.24000000000000005
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3282",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 4,
+        "predicted": 12,
+        "expected": 22,
+        "precision": 0.3333333333333333,
+        "recall": 0.18181818181818182,
+        "f1": 0.23529411764705885
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7255",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 12,
+        "predicted": 12,
+        "expected": 16,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571428571428571
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3213",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 5,
+          "expected": 3,
+          "precision": 0.6,
+          "recall": 1.0,
+          "f1": 0.7499999999999999
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 20,
+        "predicted": 23,
+        "expected": 24,
+        "precision": 0.8695652173913043,
+        "recall": 0.8333333333333334,
+        "f1": 0.851063829787234
+      },
+      "dst": {
+        "matched": 1,
+        "predicted": 1,
+        "expected": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3328",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 5,
+        "predicted": 15,
+        "expected": 12,
+        "precision": 0.3333333333333333,
+        "recall": 0.4166666666666667,
+        "f1": 0.3703703703703704
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7285",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 1,
+          "predicted": 2,
+          "expected": 3,
+          "precision": 0.5,
+          "recall": 0.3333333333333333,
+          "f1": 0.4
+        },
+        "lot_matched": 0,
+        "lot_expected": 2,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 15,
+        "predicted": 21,
+        "expected": 22,
+        "precision": 0.7142857142857143,
+        "recall": 0.6818181818181818,
+        "f1": 0.6976744186046512
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_6137",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.5,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 7,
+        "predicted": 17,
+        "expected": 24,
+        "precision": 0.4117647058823529,
+        "recall": 0.2916666666666667,
+        "f1": 0.34146341463414637
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_6178",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 4,
+          "expected": 2,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 2,
+        "predicted": 7,
+        "expected": 20,
+        "precision": 0.2857142857142857,
+        "recall": 0.1,
+        "f1": 0.14814814814814817
+      },
+      "dst": {
+        "matched": 1,
+        "predicted": 1,
+        "expected": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_6211",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 0,
+          "predicted": 4,
+          "expected": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 2,
+        "predicted": 7,
+        "expected": 21,
+        "precision": 0.2857142857142857,
+        "recall": 0.09523809523809523,
+        "f1": 0.14285714285714285
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_6589",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 5,
+          "predicted": 5,
+          "expected": 5,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 21,
+        "expected": 32,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 1,
+        "predicted": 1,
+        "expected": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_6617",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 4,
+          "expected": 2,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 14,
+        "expected": 25,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_6095",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 4,
+          "predicted": 4,
+          "expected": 4,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 2,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 12,
+        "predicted": 18,
+        "expected": 21,
+        "precision": 0.6666666666666666,
+        "recall": 0.5714285714285714,
+        "f1": 0.6153846153846153
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7794",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1": 0.6666666666666666
+        },
+        "lot_matched": 1,
+        "lot_expected": 2,
+        "lot_recall": 0.5
+      },
+      "formation_tops": {
+        "matched": 8,
+        "predicted": 19,
+        "expected": 18,
+        "precision": 0.42105263157894735,
+        "recall": 0.4444444444444444,
+        "f1": 0.43243243243243246
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7704",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 11,
+        "predicted": 21,
+        "expected": 21,
+        "precision": 0.5238095238095238,
+        "recall": 0.5238095238095238,
+        "f1": 0.5238095238095238
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7730",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 12,
+        "predicted": 14,
+        "expected": 19,
+        "precision": 0.8571428571428571,
+        "recall": 0.631578947368421,
+        "f1": 0.7272727272727273
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3251",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.75,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 1,
+          "predicted": 4,
+          "expected": 1,
+          "precision": 0.25,
+          "recall": 1.0,
+          "f1": 0.4
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 27,
+        "expected": 32,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3176",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": false,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 0.5,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 5,
+          "expected": 2,
+          "precision": 0.4,
+          "recall": 1.0,
+          "f1": 0.5714285714285715
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 11,
+        "predicted": 13,
+        "expected": 28,
+        "precision": 0.8461538461538461,
+        "recall": 0.39285714285714285,
+        "f1": 0.5365853658536585
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3243",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 0,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 6,
+        "predicted": 12,
+        "expected": 22,
+        "precision": 0.5,
+        "recall": 0.2727272727272727,
+        "f1": 0.3529411764705882
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7504",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 8,
+        "predicted": 17,
+        "expected": 17,
+        "precision": 0.47058823529411764,
+        "recall": 0.47058823529411764,
+        "f1": 0.47058823529411764
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3210",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 5,
+        "predicted": 14,
+        "expected": 9,
+        "precision": 0.35714285714285715,
+        "recall": 0.5555555555555556,
+        "f1": 0.43478260869565216
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3246",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 7,
+        "predicted": 8,
+        "expected": 32,
+        "precision": 0.875,
+        "recall": 0.21875,
+        "f1": 0.35
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7750",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 9,
+        "predicted": 14,
+        "expected": 20,
+        "precision": 0.6428571428571429,
+        "recall": 0.45,
+        "f1": 0.5294117647058824
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_4143",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.5,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 13,
+        "expected": 18,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_5017",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 1,
+        "expected": 16,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7776",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 17,
+        "predicted": 18,
+        "expected": 30,
+        "precision": 0.9444444444444444,
+        "recall": 0.5666666666666667,
+        "f1": 0.7083333333333334
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3244",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 5,
+        "predicted": 9,
+        "expected": 21,
+        "precision": 0.5555555555555556,
+        "recall": 0.23809523809523808,
+        "f1": 0.33333333333333326
+      },
+      "dst": {
+        "matched": 1,
+        "predicted": 2,
+        "expected": 2,
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5
+      }
+    },
+    {
+      "task_id": "ncs_eval_3249",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 2,
+          "predicted": 2,
+          "expected": 2,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 1,
+        "lot_expected": 1,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 6,
+        "predicted": 19,
+        "expected": 19,
+        "precision": 0.3157894736842105,
+        "recall": 0.3157894736842105,
+        "f1": 0.3157894736842105
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7416",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 12,
+        "predicted": 18,
+        "expected": 23,
+        "precision": 0.6666666666666666,
+        "recall": 0.5217391304347826,
+        "f1": 0.5853658536585366
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3209",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 1,
+          "predicted": 3,
+          "expected": 2,
+          "precision": 0.3333333333333333,
+          "recall": 0.5,
+          "f1": 0.4
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 3,
+        "predicted": 17,
+        "expected": 22,
+        "precision": 0.17647058823529413,
+        "recall": 0.13636363636363635,
+        "f1": 0.15384615384615383
+      },
+      "dst": {
+        "matched": 1,
+        "predicted": 1,
+        "expected": 1,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7731",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 20,
+        "predicted": 30,
+        "expected": 24,
+        "precision": 0.6666666666666666,
+        "recall": 0.8333333333333334,
+        "f1": 0.7407407407407408
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_7208",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 3,
+          "predicted": 3,
+          "expected": 3,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 2,
+        "lot_expected": 2,
+        "lot_recall": 1.0
+      },
+      "formation_tops": {
+        "matched": 24,
+        "predicted": 27,
+        "expected": 33,
+        "precision": 0.8888888888888888,
+        "recall": 0.7272727272727273,
+        "f1": 0.7999999999999999
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3084",
+      "header": {
+        "kelly_bushing_m": true,
+        "water_depth_m": true,
+        "total_depth_md_rkb_m": true,
+        "final_vertical_depth_tvd_rkb_m": true
+      },
+      "header_accuracy": 1.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 5,
+          "predicted": 5,
+          "expected": 5,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 0,
+        "lot_recall": null
+      },
+      "formation_tops": {
+        "matched": 10,
+        "predicted": 10,
+        "expected": 10,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "dst": {
+        "matched": 2,
+        "predicted": 2,
+        "expected": 2,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    {
+      "task_id": "ncs_eval_3166",
+      "header": {
+        "kelly_bushing_m": false,
+        "water_depth_m": false,
+        "total_depth_md_rkb_m": false,
+        "final_vertical_depth_tvd_rkb_m": false
+      },
+      "header_accuracy": 0.0,
+      "casing_and_lot": {
+        "casing": {
+          "matched": 0,
+          "predicted": 0,
+          "expected": 3,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "lot_matched": 0,
+        "lot_expected": 2,
+        "lot_recall": 0.0
+      },
+      "formation_tops": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 24,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "dst": {
+        "matched": 0,
+        "predicted": 0,
+        "expected": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    }
+  ],
+  "mean_rlvr_reward": 0.726663,
+  "run_metadata": {
+    "model": "deepseek/deepseek-v3.2",
+    "mode": "open_book",
+    "pack_mode": "routed",
+    "max_pages": 28,
+    "max_chars": 120000,
+    "prompt_tokens": 3117972,
+    "completion_tokens": 195091,
+    "cost_usd": 0.925763,
+    "valid_json_new": 180,
+    "valid_schema_new": 172,
+    "errors_new": 0
+  }
+}
