@@ -1,4 +1,5 @@
 import asyncio
+import os
 from pathlib import Path
 from typing import Annotated, Literal
 
@@ -50,6 +51,7 @@ def run_eval_cmd(
     base_url: Annotated[str, typer.Option()] = "http://127.0.0.1:8000/v1",
     model: Annotated[str, typer.Option()] = "Qwen/Qwen2.5-14B-Instruct",
     api_key: Annotated[str, typer.Option()] = "EMPTY",
+    api_key_file: Annotated[Path | None, typer.Option()] = None,
     mode: Annotated[Literal["open_book", "closed_book"], typer.Option()] = "open_book",
     pack_mode: Annotated[Literal["routed", "full"], typer.Option()] = "routed",
     max_pages: Annotated[int, typer.Option()] = 28,
@@ -59,12 +61,19 @@ def run_eval_cmd(
     limit: Annotated[int | None, typer.Option()] = None,
     json_mode: Annotated[bool, typer.Option()] = True,
 ) -> None:
+    resolved_key = api_key
+    if api_key_file is not None:
+        resolved_key = api_key_file.read_text(encoding="utf-8").strip()
+    elif resolved_key == "EMPTY":
+        resolved_key = os.environ.get("OPENROUTER_API_KEY") or os.environ.get(
+            "OPENAI_API_KEY", "EMPTY"
+        )
     release_dir = resolve_release_dir(data_dir)
     tasks_path = tasks_jsonl or (release_dir / "eval" / "eval_exploration_recent.jsonl")
     inf_cfg = InferenceConfig(
         base_url=base_url,
         model=model,
-        api_key=api_key,
+        api_key=resolved_key,
         mode=mode,
         concurrency=concurrency,
         max_tokens=max_tokens,
