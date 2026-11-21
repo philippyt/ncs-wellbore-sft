@@ -133,16 +133,25 @@ def load_inkling_model(
     return model, tokenizer
 
 
-def _format_chat(tokenizer: Any, messages: list[dict[str, str]], add_gen: bool) -> str:
+def _format_chat(
+    tokenizer: Any,
+    messages: list[dict[str, str]],
+    add_gen: bool,
+    reasoning_effort: str = "none",
+) -> str:
     if hasattr(tokenizer, "apply_chat_template") and tokenizer.chat_template:
         try:
-            return str(
+            rendered = str(
                 tokenizer.apply_chat_template(
                     messages,
                     tokenize=False,
                     add_generation_prompt=add_gen,
+                    reasoning_effort=reasoning_effort,
                 )
             )
+            if add_gen and "<|message_model|>" not in rendered[-40:]:
+                rendered += "<|message_model|><|content_text|>"
+            return rendered
         except Exception:
             pass
     parts = [f"<{m['role']}>\n{m['content']}\n</{m['role']}>" for m in messages]
@@ -232,8 +241,8 @@ def run_inkling_sft(
         for row in epoch_rows:
             msgs = row["messages"]
             prompt_text = _format_chat(tokenizer, msgs[:2], add_gen=True)
-            target_text = msgs[2]["content"] + (tokenizer.eos_token or "")
-            p_ids = tokenizer.encode(prompt_text, add_special_tokens=True)
+            target_text = msgs[2]["content"] + "<|end_message|><|content_model_end_sampling|>"
+            p_ids = tokenizer.encode(prompt_text, add_special_tokens=False)
             t_ids = tokenizer.encode(target_text, add_special_tokens=False)
             if len(p_ids) > max_prompt_tokens:
                 p_ids = p_ids[:max_prompt_tokens]
@@ -329,7 +338,7 @@ def run_inkling_rlvr(
     for step in range(1, max_steps + 1):
         row = rows[(step - 1) % len(rows)]
         prompt_text = _format_chat(tokenizer, row["prompt"], add_gen=True)
-        p_ids = tokenizer.encode(prompt_text, add_special_tokens=True)
+        p_ids = tokenizer.encode(prompt_text, add_special_tokens=False)
         if len(p_ids) > max_prompt_tokens:
             p_ids = p_ids[:max_prompt_tokens]
         prompt_tensor = torch.tensor([p_ids], dtype=torch.long, device="cuda")
@@ -497,7 +506,7 @@ def evaluate_inkling_passes(
             pages_markdown=packed_md_by_doc[did],
         )
         prompt_text = _format_chat(tokenizer, msgs, add_gen=True)
-        p_ids = tokenizer.encode(prompt_text, add_special_tokens=True)
+        p_ids = tokenizer.encode(prompt_text, add_special_tokens=False)
         if len(p_ids) > max_prompt_tokens:
             p_ids = p_ids[:max_prompt_tokens]
         encoded_prompts.append(p_ids)
