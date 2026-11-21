@@ -19,10 +19,10 @@ def resolve_release_dir(override: Path | None = None) -> Path:
 class PackConfig(BaseModel):
     mode: Literal["routed", "full"] = "routed"
     threshold: float = 3.0
-    max_pages_per_category: int = 8
+    max_pages_per_category: int = 10
     always_include_first_n: int = 2
-    max_pages: int = 28
-    max_chars: int = 120_000
+    max_pages: int = 32
+    max_chars: int = 140_000
     drop_ocr_loops: bool = True
 
 

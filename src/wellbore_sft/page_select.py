@@ -70,30 +70,44 @@ CATEGORY_PATTERNS: dict[TargetCategory, tuple[tuple[re.Pattern[str], float], ...
     "formation_tops": (
         (
             re.compile(
-                r"\b(?:table\s+of\s+lithostratigraphy|lithostratigraph(?:y|ic)\s+tops?)\b",
+                r"\b(?:table\s+of\s+lithostratigraphy"
+                r"|lithostratigraph(?:y|ic)\s+(?:tops?|summary|table|column|units?|breakdown))\b",
                 re.IGNORECASE,
             ),
             3.5,
         ),
         (
             re.compile(
-                r"\b(?:formation\s+tops?|stratigraphic\s+summary|geological\s+markers?)\b",
+                r"\b(?:formation\s+tops?|stratigraphic\s+(?:summary|table|column|tops?)"
+                r"|geological\s+(?:markers?|tops?))\b",
                 re.IGNORECASE,
             ),
             3.0,
         ),
         (
             re.compile(
-                r"\b(?:nordland|hordaland|rogaland|shetland|viking|cromer\s+knoll)\s+(?:gp|group)\b",
+                r"\b(?:nordland|hordaland|rogaland|shetland|viking|cromer\s+knoll"
+                r"|brent|dunlin|statfjord|hegre|fangst|b[aå]t|sotbakken|adventdalen"
+                r"|kapp\s+toscana|sassendalen)\s+(?:gp|group)\b",
                 re.IGNORECASE,
             ),
             2.0,
         ),
         (
             re.compile(
-                r"\b(?:balder|sele|lista|ekofisk|tor|draupne|kobbe|kolje|knurr)\s+(?:fm|formation)\b",
+                r"\b(?:balder|sele|lista|ekofisk|tor|draupne|kobbe|kolje|knurr"
+                r"|naust|kai|brygge|tare|tang|springar|nise|kvitnos|lysing|lange"
+                r"|spekk|melke|garn|ile|tofte|ror|tilje|[aå]re|st[oø]|nordmela"
+                r"|tub[aå]en|fruholmen|snadd|kolmule|hekkingen|fuglen|torsk"
+                r"|utsira|skade|grid|hod|blod[oø]ks|svarte|r[oø]dby|sola|[aå]sgard"
+                r"|heather|tarbert|ness|etive|rannoch|broom|drake|cook|amundsen"
+                r"|lunde|skagerrak|smith\s+bank|zechstein|rotliegend)\b",
                 re.IGNORECASE,
             ),
+            1.2,
+        ),
+        (
+            re.compile(r"\b(?:top\s+md|md\s*rkb|tvd\s*msl|tvdss|lithostrat)\b", re.IGNORECASE),
             1.5,
         ),
     ),
@@ -125,7 +139,15 @@ CATEGORY_PATTERNS: dict[TargetCategory, tuple[tuple[re.Pattern[str], float], ...
 TAG_BOOSTS: dict[TargetCategory, frozenset[str]] = {
     "header": frozenset({"well_data", "well_summary", "well_history"}),
     "casing_and_lot": frozenset({"casing", "cementing", "formation_integrity", "leak_off"}),
-    "formation_tops": frozenset({"lithostratigraphy", "formation_tops", "stratigraphy"}),
+    "formation_tops": frozenset(
+        {
+            "lithostratigraphy",
+            "formation_tops",
+            "stratigraphy",
+            "formations",
+            "formation_description",
+        }
+    ),
     "dst": frozenset({"dst", "well_testing", "production_test"}),
 }
 
@@ -160,11 +182,13 @@ def score_page(
     for category, patterns in CATEGORY_PATTERNS.items():
         total = 0.0
         for pat, weight in patterns:
-            hits = min(len(pat.findall(masked)), 2)
+            cap = 4 if category == "formation_tops" else 2
+            hits = min(len(pat.findall(masked)), cap)
             total += hits * weight
+        tag_hits = len(tag_set & TAG_BOOSTS[category])
+        if tag_hits > 0:
+            total += min(2.5, 1.5 + 0.5 * (tag_hits - 1))
         if total > 0.0:
-            if tag_set & TAG_BOOSTS[category]:
-                total += 1.0
             if has_tables:
                 total += 0.5
             if has_fig_desc:
