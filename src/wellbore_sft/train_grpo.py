@@ -87,7 +87,7 @@ def run_grpo_training(
 
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
-        torch_dtype=torch.bfloat16,
+        dtype=torch.bfloat16,
         attn_implementation=attn_implementation,
         device_map="auto",
     )
@@ -118,7 +118,7 @@ def run_grpo_training(
         learning_rate=learning_rate,
         temperature=temperature,
         lr_scheduler_type="cosine",
-        warmup_ratio=0.05,
+        warmup_steps=0.05,
         bf16=True,
         gradient_checkpointing=True,
         num_generations=num_generations,

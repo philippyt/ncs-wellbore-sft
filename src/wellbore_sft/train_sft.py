@@ -19,7 +19,7 @@ def merge_lora_checkpoint(
     tokenizer = AutoTokenizer.from_pretrained(str(adapter_dir), use_fast=True)
     model = AutoModelForCausalLM.from_pretrained(
         base_model,
-        torch_dtype=torch.bfloat16,
+        dtype=torch.bfloat16,
         device_map="auto",
     )
     peft_model = PeftModel.from_pretrained(model, str(adapter_dir))
@@ -78,7 +78,7 @@ def run_sft_training(
 
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
-        torch_dtype=torch.bfloat16,
+        dtype=torch.bfloat16,
         quantization_config=quant_config,
         attn_implementation=attn_implementation,
         device_map="auto",
@@ -110,7 +110,7 @@ def run_sft_training(
         gradient_accumulation_steps=grad_accum,
         learning_rate=learning_rate,
         lr_scheduler_type="cosine",
-        warmup_ratio=0.05,
+        warmup_steps=0.05,
         bf16=True,
         gradient_checkpointing=True,
         max_length=max_seq_length,
