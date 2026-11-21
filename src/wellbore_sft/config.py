@@ -4,7 +4,7 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-DEFAULT_RELEASE_DIR = Path(r"C:\Users\philip\Documents\wellbore-completion\output\release_v2")
+DEFAULT_RELEASE_DIR = Path("../wellbore-completion/output/release_v2")
 
 
 def resolve_release_dir(override: Path | None = None) -> Path:

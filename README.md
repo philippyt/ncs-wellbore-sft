@@ -1,6 +1,6 @@
 # Wellbore SFT and RLVR
 
-Long context structured extraction SFT, RLVR GRPO training, and deterministic FactPages evaluation built directly on the NCS wellbore completion Parquet files.
+Long context structured extraction SFT, RLVR GRPO training, and deterministic FactPages evaluation built directly on the NCS wellbore completion Parquet files from https://huggingface.co/datasets/philippyt/ncs-wellbore-completion.
 
 ## Benchmark Results on `eval_exploration_recent` (n = 180)
 
@@ -9,6 +9,7 @@ All runs evaluated on the exact 180 task `eval_exploration_recent.jsonl` split w
 | Model | Mode | Header Acc | Casing F1 | LOT Recall (n=150) | Formation Tops F1 | DST F1 (n=24) | RLVR Reward | Valid Schema | Cost (USD) |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | `qwen/qwen3-235b-a22b-2507` | Closed book | 0.007 | 0.000 | 0.000 | 0.000 | 0.000 | 0.102 | 179/180 | 0.075 |
+| `qwen/qwen3.5-9b` | Open routed | 0.296 | 0.300 | 0.224 | 0.138 | 0.354 | 0.351 | 73/180 | 0.759 |
 | Regex baseline | Open book | 0.374 | 0.278 | 0.091 | 0.184 | 0.000 | 0.363 | 180/180 | 0.000 |
 | `qwen/qwen3-30b-a3b-instruct-2507` | Open routed | 0.881 | 0.758 | 0.651 | 0.347 | 0.611 | 0.668 | 179/180 | 0.376 |
 | `qwen/qwen3.7-flash` | Open full (600k chars) | 0.868 | 0.742 | **0.694** | 0.406 | 0.594 | 0.716 | 170/180 | 3.758 |
@@ -42,7 +43,7 @@ GPU training extras (`torch`, `transformers`, `trl`, `peft`, `datasets`, `accele
 uv sync --extra train
 ```
 
-Point to a custom Parquet release directory via `WELLBORE_DATA_DIR` or `--data-dir`. Default points to `C:\Users\philip\Documents\wellbore-completion\output\release_v2`.
+Point to your local Parquet release directory via `WELLBORE_DATA_DIR` or `--data-dir`.
 
 ## Commands
 
