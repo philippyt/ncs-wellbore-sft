@@ -335,6 +335,11 @@ def run_inkling_rlvr(
     halluc_hist: list[float] = []
     t_start = time.time()
 
+    end_msg_id = tokenizer.convert_tokens_to_ids("<|end_message|>")
+    eos_ids = [int(tokenizer.eos_token_id)]
+    if isinstance(end_msg_id, int) and end_msg_id >= 0 and end_msg_id not in eos_ids:
+        eos_ids.append(end_msg_id)
+
     for step in range(1, max_steps + 1):
         row = rows[(step - 1) % len(rows)]
         prompt_text = _format_chat(tokenizer, row["prompt"], add_gen=True)
@@ -357,7 +362,7 @@ def run_inkling_rlvr(
                     temperature=temperature,
                     top_p=0.95,
                     pad_token_id=tokenizer.pad_token_id,
-                    eos_token_id=tokenizer.eos_token_id,
+                    eos_token_id=eos_ids,
                 )
                 new_toks = gen[0, len(p_ids) :].tolist()
                 completions_ids.append(new_toks)
@@ -512,6 +517,10 @@ def evaluate_inkling_passes(
         encoded_prompts.append(p_ids)
 
     pad_id = int(tokenizer.pad_token_id)
+    end_msg_id = tokenizer.convert_tokens_to_ids("<|end_message|>")
+    eos_ids = [int(tokenizer.eos_token_id)]
+    if isinstance(end_msg_id, int) and end_msg_id >= 0 and end_msg_id not in eos_ids:
+        eos_ids.append(end_msg_id)
 
     for npass in passes:
         set_loop_passes(model, npass)
@@ -535,7 +544,7 @@ def evaluate_inkling_passes(
                     max_new_tokens=max_new_tokens,
                     do_sample=False,
                     pad_token_id=pad_id,
-                    eos_token_id=tokenizer.eos_token_id,
+                    eos_token_id=eos_ids,
                 )
             gen_sec = (time.time() - t_gen) / len(batch_tasks)
 
