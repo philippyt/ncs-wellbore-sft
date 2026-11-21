@@ -1,0 +1,51 @@
+[project]
+name = "wellbore-sft"
+version = "0.1.0"
+description = "Long context structured extraction SFT, RLVR GRPO training, and deterministic FactPages evaluation on NCS wellbore completion Parquet files."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+dependencies = [
+    "httpx>=0.28.0",
+    "orjson>=3.10.0",
+    "polars>=1.20.0",
+    "pydantic>=2.10.0",
+    "typer>=0.15.0",
+]
+
+[project.optional-dependencies]
+train = [
+    "accelerate>=1.3.0",
+    "bitsandbytes>=0.45.0",
+    "datasets>=3.2.0",
+    "peft>=0.14.0",
+    "torch>=2.5.0",
+    "transformers>=4.49.0",
+    "trl>=0.15.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.0",
+    "ruff>=0.9.0",
+]
+
+[project.scripts]
+wellbore-sft = "wellbore_sft.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/wellbore_sft"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
