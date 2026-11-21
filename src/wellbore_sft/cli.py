@@ -8,6 +8,12 @@ import typer
 
 from wellbore_sft.config import InferenceConfig, PackConfig, resolve_release_dir
 from wellbore_sft.dataset_prep import build_training_datasets
+from wellbore_sft.inkling import (
+    INKLING_MODEL_ID,
+    evaluate_inkling_passes,
+    run_inkling_rlvr,
+    run_inkling_sft,
+)
 from wellbore_sft.runner import run_eval_async
 from wellbore_sft.schema import ground_truth_to_extraction
 from wellbore_sft.scorer import compute_rlvr_reward, score_eval_run
@@ -27,6 +33,7 @@ def build_data_cmd(
     val_fraction: Annotated[float, typer.Option()] = 0.10,
     require_casing_and_tops: Annotated[bool, typer.Option()] = True,
     max_docs: Annotated[int | None, typer.Option()] = None,
+    basin_filter: Annotated[str | None, typer.Option()] = None,
 ) -> None:
     release_dir = resolve_release_dir(data_dir)
     pack_cfg = PackConfig(mode=pack_mode, max_pages=max_pages, max_chars=max_chars)
@@ -37,6 +44,7 @@ def build_data_cmd(
         val_fraction=val_fraction,
         require_casing_and_tops=require_casing_and_tops,
         max_docs=max_docs,
+        basin_filter=basin_filter,
     )
     typer.echo(orjson.dumps(manifest, option=orjson.OPT_INDENT_2).decode())
 
@@ -249,5 +257,103 @@ def merge_lora_cmd(
         base_model=base_model,
         adapter_dir=adapter_dir,
         output_dir=output_dir,
+    )
+    typer.echo(orjson.dumps(result, option=orjson.OPT_INDENT_2).decode())
+
+
+@app.command("inkling-sft")
+def inkling_sft_cmd(
+    train_jsonl: Annotated[Path, typer.Option()] = Path("artifacts/data_north_sea/sft_train.jsonl"),
+    output_dir: Annotated[Path, typer.Option()] = Path("checkpoints/inkling_sft"),
+    model: Annotated[str, typer.Option()] = INKLING_MODEL_ID,
+    loop_num_passes: Annotated[int, typer.Option()] = 3,
+    max_prompt_tokens: Annotated[int, typer.Option()] = 6656,
+    max_target_tokens: Annotated[int, typer.Option()] = 1536,
+    epochs: Annotated[int, typer.Option()] = 1,
+    max_steps: Annotated[int, typer.Option()] = -1,
+    grad_accum: Annotated[int, typer.Option()] = 4,
+    learning_rate: Annotated[float, typer.Option()] = 1.5e-4,
+    lora_r: Annotated[int, typer.Option()] = 16,
+    lora_alpha: Annotated[int, typer.Option()] = 32,
+) -> None:
+    result = run_inkling_sft(
+        train_jsonl=train_jsonl,
+        output_dir=output_dir,
+        model_id=model,
+        loop_num_passes=loop_num_passes,
+        max_prompt_tokens=max_prompt_tokens,
+        max_target_tokens=max_target_tokens,
+        epochs=epochs,
+        max_steps=max_steps,
+        grad_accum=grad_accum,
+        learning_rate=learning_rate,
+        lora_r=lora_r,
+        lora_alpha=lora_alpha,
+    )
+    typer.echo(orjson.dumps(result, option=orjson.OPT_INDENT_2).decode())
+
+
+@app.command("inkling-rlvr")
+def inkling_rlvr_cmd(
+    train_jsonl: Annotated[Path, typer.Option()] = Path(
+        "artifacts/data_north_sea/rlvr_train.jsonl"
+    ),
+    adapter_dir: Annotated[Path, typer.Option()] = Path("checkpoints/inkling_sft/adapter"),
+    output_dir: Annotated[Path, typer.Option()] = Path("checkpoints/inkling_rlvr_grounded"),
+    model: Annotated[str, typer.Option()] = INKLING_MODEL_ID,
+    grounded: Annotated[bool, typer.Option()] = True,
+    loop_num_passes: Annotated[int, typer.Option()] = 3,
+    max_prompt_tokens: Annotated[int, typer.Option()] = 6144,
+    max_new_tokens: Annotated[int, typer.Option()] = 1280,
+    num_generations: Annotated[int, typer.Option()] = 4,
+    max_steps: Annotated[int, typer.Option()] = 60,
+    learning_rate: Annotated[float, typer.Option()] = 2e-5,
+) -> None:
+    result = run_inkling_rlvr(
+        train_jsonl=train_jsonl,
+        adapter_dir=adapter_dir,
+        output_dir=output_dir,
+        model_id=model,
+        grounded=grounded,
+        loop_num_passes=loop_num_passes,
+        max_prompt_tokens=max_prompt_tokens,
+        max_new_tokens=max_new_tokens,
+        num_generations=num_generations,
+        max_steps=max_steps,
+        learning_rate=learning_rate,
+    )
+    typer.echo(orjson.dumps(result, option=orjson.OPT_INDENT_2).decode())
+
+
+@app.command("inkling-eval")
+def inkling_eval_cmd(
+    output_dir: Annotated[Path, typer.Option()] = Path("outputs/inkling_base"),
+    data_dir: Annotated[Path | None, typer.Option()] = None,
+    tasks_jsonl: Annotated[Path | None, typer.Option()] = None,
+    basin_map: Annotated[Path | None, typer.Option()] = None,
+    adapter_dir: Annotated[Path | None, typer.Option()] = None,
+    model: Annotated[str, typer.Option()] = INKLING_MODEL_ID,
+    passes: Annotated[str, typer.Option()] = "1,2,3,4",
+    max_pages: Annotated[int, typer.Option()] = 16,
+    max_chars: Annotated[int, typer.Option()] = 32_000,
+    max_prompt_tokens: Annotated[int, typer.Option()] = 6656,
+    max_new_tokens: Annotated[int, typer.Option()] = 1536,
+    limit: Annotated[int | None, typer.Option()] = None,
+) -> None:
+    release_dir = resolve_release_dir(data_dir)
+    tasks_path = tasks_jsonl or (release_dir / "eval" / "eval_exploration_recent.jsonl")
+    pass_list = [int(p.strip()) for p in passes.split(",") if p.strip()]
+    result = evaluate_inkling_passes(
+        release_dir=release_dir,
+        tasks_jsonl=tasks_path,
+        output_dir=output_dir,
+        passes=pass_list,
+        model_id=model,
+        adapter_dir=adapter_dir,
+        pack_cfg=PackConfig(mode="routed", max_pages=max_pages, max_chars=max_chars),
+        max_prompt_tokens=max_prompt_tokens,
+        max_new_tokens=max_new_tokens,
+        limit=limit,
+        basin_map_path=basin_map,
     )
     typer.echo(orjson.dumps(result, option=orjson.OPT_INDENT_2).decode())

@@ -62,6 +62,7 @@ def build_training_datasets(
     val_fraction: float = 0.10,
     require_casing_and_tops: bool = True,
     max_docs: int | None = None,
+    basin_filter: str | None = None,
 ) -> dict[str, Any]:
     cfg = pack_config or PackConfig()
     dataset_dir = release_dir / "dataset"
@@ -82,6 +83,10 @@ def build_training_datasets(
         & pl.col("wlbNpdidWellbore").is_not_null()
         & (pl.col("total_pages") >= 5)
     )
+    if basin_filter:
+        candidates = candidates.filter(
+            pl.col("wlbMainArea").str.to_uppercase() == basin_filter.strip().upper()
+        )
     if require_casing_and_tops:
         eligible_ids = list(casing_ids & tops_ids)
         candidates = candidates.filter(pl.col("wlbNpdidWellbore").is_in(eligible_ids))
@@ -163,9 +168,11 @@ def build_training_datasets(
                 "doc_id": doc_id,
                 "wellbore_name": str(row["wellbore_name"]),
                 "production_licence": licence,
+                "main_area": str(row.get("wlbMainArea") or "UNKNOWN"),
                 "is_vertical_approx": bool(row.get("is_vertical_approx", False)),
                 "selected_pages": [int(p["page_no"]) for p in packed_pages],
                 "prompt_chars": len(pages_md),
+                "pages_markdown": pages_md,
                 "prompt": rlvr_prompt,
                 "ground_truth": ground_truth,
             }
