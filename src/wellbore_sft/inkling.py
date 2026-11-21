@@ -452,7 +452,8 @@ def evaluate_inkling_passes(
     adapter_dir: Path | None = None,
     pack_cfg: PackConfig | None = None,
     max_prompt_tokens: int = 6656,
-    max_new_tokens: int = 1536,
+    max_new_tokens: int = 1024,
+    batch_size: int = 4,
     limit: int | None = None,
     basin_map_path: Path | None = None,
 ) -> dict[str, Any]:
@@ -483,73 +484,94 @@ def evaluate_inkling_passes(
         adapter_dir=adapter_dir,
         for_training=False,
     )
+    tokenizer.padding_side = "left"
     output_dir.mkdir(parents=True, exist_ok=True)
     all_reports: dict[str, Any] = {}
+
+    encoded_prompts: list[list[int]] = []
+    for task in tasks:
+        did = str(task["doc_id"])
+        msgs = build_extraction_messages(
+            wellbore_name=str(task["wellbore_name"]),
+            doc_id=did,
+            pages_markdown=packed_md_by_doc[did],
+        )
+        prompt_text = _format_chat(tokenizer, msgs, add_gen=True)
+        p_ids = tokenizer.encode(prompt_text, add_special_tokens=True)
+        if len(p_ids) > max_prompt_tokens:
+            p_ids = p_ids[:max_prompt_tokens]
+        encoded_prompts.append(p_ids)
+
+    pad_id = int(tokenizer.pad_token_id)
 
     for npass in passes:
         set_loop_passes(model, npass)
         per_task_rows: list[dict[str, Any]] = []
         t0 = time.time()
-        for idx, task in enumerate(tasks, start=1):
-            tid = str(task["task_id"])
-            did = str(task["doc_id"])
-            pages_md = packed_md_by_doc[did]
-            msgs = build_extraction_messages(
-                wellbore_name=str(task["wellbore_name"]),
-                doc_id=did,
-                pages_markdown=pages_md,
-            )
-            prompt_text = _format_chat(tokenizer, msgs, add_gen=True)
-            p_ids = tokenizer.encode(prompt_text, add_special_tokens=True)
-            if len(p_ids) > max_prompt_tokens:
-                p_ids = p_ids[:max_prompt_tokens]
-            inp = torch.tensor([p_ids], dtype=torch.long, device="cuda")
+        for start in range(0, len(tasks), batch_size):
+            end = min(start + batch_size, len(tasks))
+            batch_tasks = tasks[start:end]
+            batch_ids = encoded_prompts[start:end]
+            max_len = max(len(x) for x in batch_ids)
+            padded = [[pad_id] * (max_len - len(x)) + x for x in batch_ids]
+            attn_mask = [[0] * (max_len - len(x)) + [1] * len(x) for x in batch_ids]
+            inp = torch.tensor(padded, dtype=torch.long, device="cuda")
+            mask = torch.tensor(attn_mask, dtype=torch.long, device="cuda")
 
             t_gen = time.time()
             with torch.no_grad():
                 gen = model.generate(
                     input_ids=inp,
+                    attention_mask=mask,
                     max_new_tokens=max_new_tokens,
                     do_sample=False,
-                    pad_token_id=tokenizer.pad_token_id,
+                    pad_token_id=pad_id,
                     eos_token_id=tokenizer.eos_token_id,
                 )
-            gen_sec = time.time() - t_gen
-            new_toks = gen[0, len(p_ids) :].tolist()
-            raw_text = tokenizer.decode(new_toks, skip_special_tokens=True)
-            parsed = parse_prediction_json(raw_text, tid)
-            pred = parsed.prediction or WellborePrediction(task_id=tid)
-            scored = score_wellbore_prediction(pred, task)
-            raw_reward = compute_rlvr_reward(raw_text, task).reward
-            grounded_bd, ungrounded_rate = compute_grounded_rlvr_reward(raw_text, task, pages_md)
+            gen_sec = (time.time() - t_gen) / len(batch_tasks)
 
-            basin = basin_by_doc.get(did, "UNKNOWN")
-            per_task_rows.append(
-                {
-                    "task_id": tid,
-                    "doc_id": did,
-                    "basin": basin,
-                    "is_ood_basin": basin != "NORTH SEA",
-                    "valid_json": parsed.valid_json,
-                    "valid_schema": parsed.valid_schema,
-                    "gen_tokens": len(new_toks),
-                    "gen_seconds": round(gen_sec, 3),
-                    "header_accuracy": scored["header_accuracy"],
-                    "casing_f1": scored["casing_and_lot"]["casing"]["f1"],
-                    "lot_recall": scored["casing_and_lot"]["lot_recall"],
-                    "formation_tops_f1": scored["formation_tops"]["f1"],
-                    "dst_expected": scored["dst"]["expected"],
-                    "dst_f1": scored["dst"]["f1"],
-                    "rlvr_reward": raw_reward,
-                    "grounded_reward": grounded_bd.reward,
-                    "ungrounded_rate": ungrounded_rate,
-                }
-            )
-            if idx % 10 == 0 or idx == len(tasks):
-                print(
-                    f"[eval pass={npass}] {idx}/{len(tasks)} elapsed={time.time() - t0:.0f}s",
-                    flush=True,
+            for bi, task in enumerate(batch_tasks):
+                tid = str(task["task_id"])
+                did = str(task["doc_id"])
+                pages_md = packed_md_by_doc[did]
+                new_toks = gen[bi, max_len:].tolist()
+                raw_text = tokenizer.decode(new_toks, skip_special_tokens=True)
+                parsed = parse_prediction_json(raw_text, tid)
+                pred = parsed.prediction or WellborePrediction(task_id=tid)
+                scored = score_wellbore_prediction(pred, task)
+                raw_reward = compute_rlvr_reward(raw_text, task).reward
+                grounded_bd, ungrounded_rate = compute_grounded_rlvr_reward(
+                    raw_text, task, pages_md
                 )
+                basin = basin_by_doc.get(did, "UNKNOWN")
+                per_task_rows.append(
+                    {
+                        "task_id": tid,
+                        "doc_id": did,
+                        "basin": basin,
+                        "is_ood_basin": basin != "NORTH SEA",
+                        "valid_json": parsed.valid_json,
+                        "valid_schema": parsed.valid_schema,
+                        "gen_tokens": len(new_toks),
+                        "gen_seconds": round(gen_sec, 3),
+                        "header_accuracy": scored["header_accuracy"],
+                        "casing_f1": scored["casing_and_lot"]["casing"]["f1"],
+                        "lot_recall": scored["casing_and_lot"]["lot_recall"],
+                        "formation_tops_f1": scored["formation_tops"]["f1"],
+                        "dst_expected": scored["dst"]["expected"],
+                        "dst_f1": scored["dst"]["f1"],
+                        "rlvr_reward": raw_reward,
+                        "grounded_reward": grounded_bd.reward,
+                        "ungrounded_rate": ungrounded_rate,
+                    }
+                )
+            print(
+                f"[eval pass={npass}] {end}/{len(tasks)} "
+                f"schema_ok={sum(1 for r in per_task_rows if r['valid_schema'])}/{end} "
+                f"mean_r={sum(r['rlvr_reward'] for r in per_task_rows) / end:.3f} "
+                f"elapsed={time.time() - t0:.0f}s",
+                flush=True,
+            )
 
         summary = {
             "loop_num_passes": npass,

@@ -337,7 +337,8 @@ def inkling_eval_cmd(
     max_pages: Annotated[int, typer.Option()] = 16,
     max_chars: Annotated[int, typer.Option()] = 32_000,
     max_prompt_tokens: Annotated[int, typer.Option()] = 6656,
-    max_new_tokens: Annotated[int, typer.Option()] = 1536,
+    max_new_tokens: Annotated[int, typer.Option()] = 1024,
+    batch_size: Annotated[int, typer.Option()] = 4,
     limit: Annotated[int | None, typer.Option()] = None,
 ) -> None:
     release_dir = resolve_release_dir(data_dir)
@@ -353,6 +354,7 @@ def inkling_eval_cmd(
         pack_cfg=PackConfig(mode="routed", max_pages=max_pages, max_chars=max_chars),
         max_prompt_tokens=max_prompt_tokens,
         max_new_tokens=max_new_tokens,
+        batch_size=batch_size,
         limit=limit,
         basin_map_path=basin_map,
     )
