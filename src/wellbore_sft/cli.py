@@ -12,7 +12,7 @@ from wellbore_sft.runner import run_eval_async
 from wellbore_sft.schema import ground_truth_to_extraction
 from wellbore_sft.scorer import compute_rlvr_reward, score_eval_run
 from wellbore_sft.train_grpo import run_grpo_training
-from wellbore_sft.train_sft import run_sft_training
+from wellbore_sft.train_sft import merge_lora_checkpoint, run_sft_training
 
 app = typer.Typer(no_args_is_help=True)
 
@@ -163,16 +163,19 @@ def reward_check_cmd(
 def train_sft_cmd(
     train_jsonl: Annotated[Path, typer.Option()] = Path("artifacts/data/sft_train.jsonl"),
     val_jsonl: Annotated[Path, typer.Option()] = Path("artifacts/data/sft_val.jsonl"),
-    model: Annotated[str, typer.Option()] = "Qwen/Qwen2.5-7B-Instruct",
+    model: Annotated[str, typer.Option()] = "Qwen/Qwen3.5-9B",
     output_dir: Annotated[Path, typer.Option()] = Path("checkpoints/sft"),
-    max_seq_length: Annotated[int, typer.Option()] = 32768,
+    max_seq_length: Annotated[int, typer.Option()] = 24576,
     epochs: Annotated[float, typer.Option()] = 2.0,
+    max_steps: Annotated[int, typer.Option()] = -1,
     learning_rate: Annotated[float, typer.Option()] = 2e-4,
     batch_size: Annotated[int, typer.Option()] = 1,
     grad_accum: Annotated[int, typer.Option()] = 8,
     lora_r: Annotated[int, typer.Option()] = 32,
     lora_alpha: Annotated[int, typer.Option()] = 64,
     load_in_4bit: Annotated[bool, typer.Option()] = False,
+    attn_implementation: Annotated[str, typer.Option()] = "sdpa",
+    merge_and_save: Annotated[bool, typer.Option()] = True,
 ) -> None:
     result = run_sft_training(
         train_jsonl=train_jsonl,
@@ -181,12 +184,15 @@ def train_sft_cmd(
         output_dir=output_dir,
         max_seq_length=max_seq_length,
         epochs=epochs,
+        max_steps=max_steps,
         learning_rate=learning_rate,
         batch_size=batch_size,
         grad_accum=grad_accum,
         lora_r=lora_r,
         lora_alpha=lora_alpha,
         load_in_4bit=load_in_4bit,
+        attn_implementation=attn_implementation,
+        merge_and_save=merge_and_save,
     )
     typer.echo(orjson.dumps(result, option=orjson.OPT_INDENT_2).decode())
 
@@ -194,18 +200,22 @@ def train_sft_cmd(
 @app.command("train-grpo")
 def train_grpo_cmd(
     train_jsonl: Annotated[Path, typer.Option()] = Path("artifacts/data/rlvr_train.jsonl"),
-    model: Annotated[str, typer.Option()] = "checkpoints/sft/final",
+    model: Annotated[str, typer.Option()] = "checkpoints/sft/merged",
     output_dir: Annotated[Path, typer.Option()] = Path("checkpoints/grpo"),
-    max_prompt_length: Annotated[int, typer.Option()] = 24576,
+    max_prompt_length: Annotated[int, typer.Option()] = 20480,
     max_completion_length: Annotated[int, typer.Option()] = 3072,
     num_generations: Annotated[int, typer.Option()] = 4,
     epochs: Annotated[float, typer.Option()] = 1.0,
+    max_steps: Annotated[int, typer.Option()] = 250,
     learning_rate: Annotated[float, typer.Option()] = 5e-6,
+    temperature: Annotated[float, typer.Option()] = 0.7,
     batch_size: Annotated[int, typer.Option()] = 1,
     grad_accum: Annotated[int, typer.Option()] = 8,
     lora_r: Annotated[int, typer.Option()] = 32,
     lora_alpha: Annotated[int, typer.Option()] = 64,
     beta: Annotated[float, typer.Option()] = 0.04,
+    attn_implementation: Annotated[str, typer.Option()] = "sdpa",
+    merge_and_save: Annotated[bool, typer.Option()] = True,
 ) -> None:
     result = run_grpo_training(
         train_jsonl=train_jsonl,
@@ -215,11 +225,29 @@ def train_grpo_cmd(
         max_completion_length=max_completion_length,
         num_generations=num_generations,
         epochs=epochs,
+        max_steps=max_steps,
         learning_rate=learning_rate,
+        temperature=temperature,
         batch_size=batch_size,
         grad_accum=grad_accum,
         lora_r=lora_r,
         lora_alpha=lora_alpha,
         beta=beta,
+        attn_implementation=attn_implementation,
+        merge_and_save=merge_and_save,
+    )
+    typer.echo(orjson.dumps(result, option=orjson.OPT_INDENT_2).decode())
+
+
+@app.command("merge-lora")
+def merge_lora_cmd(
+    base_model: Annotated[str, typer.Option()],
+    adapter_dir: Annotated[Path, typer.Option()],
+    output_dir: Annotated[Path, typer.Option()],
+) -> None:
+    result = merge_lora_checkpoint(
+        base_model=base_model,
+        adapter_dir=adapter_dir,
+        output_dir=output_dir,
     )
     typer.echo(orjson.dumps(result, option=orjson.OPT_INDENT_2).decode())

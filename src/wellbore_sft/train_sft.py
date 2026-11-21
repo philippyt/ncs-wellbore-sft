@@ -2,19 +2,50 @@ from pathlib import Path
 from typing import Any
 
 
+def merge_lora_checkpoint(
+    base_model: str,
+    adapter_dir: Path,
+    output_dir: Path,
+) -> dict[str, str]:
+    try:
+        import torch
+        from peft import PeftModel
+        from transformers import AutoModelForCausalLM, AutoTokenizer
+    except ImportError as exc:
+        raise RuntimeError(
+            "Training dependencies are missing. Install with: uv sync --extra train"
+        ) from exc
+
+    tokenizer = AutoTokenizer.from_pretrained(str(adapter_dir), use_fast=True)
+    model = AutoModelForCausalLM.from_pretrained(
+        base_model,
+        torch_dtype=torch.bfloat16,
+        device_map="auto",
+    )
+    peft_model = PeftModel.from_pretrained(model, str(adapter_dir))
+    merged = peft_model.merge_and_unload()
+    output_dir.mkdir(parents=True, exist_ok=True)
+    merged.save_pretrained(str(output_dir))
+    tokenizer.save_pretrained(str(output_dir))
+    return {"merged_dir": str(output_dir)}
+
+
 def run_sft_training(
     train_jsonl: Path,
     val_jsonl: Path,
     model_name: str,
     output_dir: Path,
-    max_seq_length: int = 32768,
+    max_seq_length: int = 24576,
     epochs: float = 2.0,
+    max_steps: int = -1,
     learning_rate: float = 2e-4,
     batch_size: int = 1,
     grad_accum: int = 8,
     lora_r: int = 32,
     lora_alpha: int = 64,
     load_in_4bit: bool = False,
+    attn_implementation: str = "sdpa",
+    merge_and_save: bool = True,
 ) -> dict[str, Any]:
     try:
         import torch
@@ -49,6 +80,7 @@ def run_sft_training(
         model_name,
         torch_dtype=torch.bfloat16,
         quantization_config=quant_config,
+        attn_implementation=attn_implementation,
         device_map="auto",
     )
 
@@ -72,6 +104,7 @@ def run_sft_training(
     sft_config = SFTConfig(
         output_dir=str(output_dir),
         num_train_epochs=epochs,
+        max_steps=max_steps,
         per_device_train_batch_size=batch_size,
         per_device_eval_batch_size=1,
         gradient_accumulation_steps=grad_accum,
@@ -82,8 +115,9 @@ def run_sft_training(
         gradient_checkpointing=True,
         max_length=max_seq_length,
         logging_steps=5,
-        eval_strategy="epoch",
-        save_strategy="epoch",
+        eval_strategy="epoch" if max_steps <= 0 else "no",
+        save_strategy="epoch" if max_steps <= 0 else "steps",
+        save_steps=50,
         report_to="none",
     )
 
@@ -96,6 +130,20 @@ def run_sft_training(
         peft_config=peft_config,
     )
     train_result = trainer.train()
-    trainer.save_model(str(output_dir / "final"))
-    tokenizer.save_pretrained(str(output_dir / "final"))
-    return {"output_dir": str(output_dir / "final"), "metrics": dict(train_result.metrics)}
+    adapter_dir = output_dir / "adapter"
+    trainer.save_model(str(adapter_dir))
+    tokenizer.save_pretrained(str(adapter_dir))
+
+    merged_dir: Path | None = None
+    if merge_and_save and not load_in_4bit:
+        merged_dir = output_dir / "merged"
+        merged_model = trainer.model.merge_and_unload()
+        merged_dir.mkdir(parents=True, exist_ok=True)
+        merged_model.save_pretrained(str(merged_dir))
+        tokenizer.save_pretrained(str(merged_dir))
+
+    return {
+        "adapter_dir": str(adapter_dir),
+        "merged_dir": str(merged_dir) if merged_dir is not None else None,
+        "metrics": dict(train_result.metrics),
+    }
