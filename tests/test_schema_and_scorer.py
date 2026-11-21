@@ -62,6 +62,20 @@ def test_parse_prediction_handles_think_and_fences() -> None:
     assert parsed.prediction.header.kelly_bushing_m == 25.0
 
 
+def test_parse_prediction_coerces_null_lot_unit_and_lists() -> None:
+    raw = (
+        '{"header": null, "casing_and_lot": [{"casing_diameter_in": "30", '
+        '"shoe_depth": {"value": 450.0, "unit": "m", "datum": "md_rkb"}, '
+        '"lot_mud_weight": null, "lot_unit": null}], "formation_tops": null, "dst": null}'
+    )
+    parsed = parse_prediction_json(raw, "ncs_test_1")
+    assert parsed.valid_schema
+    assert parsed.prediction is not None
+    assert parsed.prediction.casing_and_lot[0].lot_unit == "g/cm3"
+    assert parsed.prediction.formation_tops == []
+    assert parsed.prediction.dst == []
+
+
 def test_oracle_gets_perfect_rlvr_reward() -> None:
     task = _sample_task()
     extraction = ground_truth_to_extraction(task["ground_truth"])

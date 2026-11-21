@@ -2,7 +2,7 @@ import re
 from typing import Any, Literal
 
 import orjson
-from pydantic import BaseModel, Field, ValidationError
+from pydantic import BaseModel, Field, ValidationError, field_validator
 
 THINK_BLOCK_RE = re.compile(r"<think>.*?</think>", re.DOTALL | re.IGNORECASE)
 FENCED_JSON_RE = re.compile(r"```(?:json)?\s*(\{.*?\})\s*```", re.DOTALL | re.IGNORECASE)
@@ -27,6 +27,13 @@ class CasingPrediction(BaseModel):
     lot_mud_weight: float | None = None
     lot_unit: Literal["g/cm3", "sg", "ppg"] = "g/cm3"
 
+    @field_validator("lot_unit", mode="before")
+    @classmethod
+    def _coerce_null_lot_unit(cls, value: Any) -> Any:
+        if value is None or value == "":
+            return "g/cm3"
+        return value
+
 
 class FormationTopPrediction(BaseModel):
     surface_name: str
@@ -43,6 +50,16 @@ class WellboreExtraction(BaseModel):
     casing_and_lot: list[CasingPrediction] = Field(default_factory=list)
     formation_tops: list[FormationTopPrediction] = Field(default_factory=list)
     dst: list[DstPrediction] = Field(default_factory=list)
+
+    @field_validator("header", mode="before")
+    @classmethod
+    def _coerce_null_header(cls, value: Any) -> Any:
+        return {} if value is None else value
+
+    @field_validator("casing_and_lot", "formation_tops", "dst", mode="before")
+    @classmethod
+    def _coerce_null_lists(cls, value: Any) -> Any:
+        return [] if value is None else value
 
 
 class WellborePrediction(WellboreExtraction):
