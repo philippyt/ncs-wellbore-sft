@@ -63,7 +63,7 @@ async def _call_chat_completion(
         except Exception as exc:
             last_error = exc
             if attempt + 1 < cfg.max_retries:
-                await asyncio.sleep(2.0 ** attempt)
+                await asyncio.sleep(2.0**attempt)
     raise RuntimeError(f"Inference failed after {cfg.max_retries} attempts: {last_error}")
 
 
@@ -99,6 +99,7 @@ async def run_eval_async(
     pack = pack_cfg or PackConfig()
 
     async with httpx.AsyncClient(timeout=inference_cfg.timeout_seconds) as client:
+
         async def process_task(task: dict[str, Any]) -> None:
             task_id = str(task["task_id"])
             if inference_cfg.mode == "closed_book":

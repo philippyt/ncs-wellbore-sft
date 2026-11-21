@@ -1,6 +1,6 @@
 import asyncio
 from pathlib import Path
-from typing import Literal
+from typing import Annotated, Literal
 
 import orjson
 import typer
@@ -18,14 +18,14 @@ app = typer.Typer(no_args_is_help=True)
 
 @app.command("build-data")
 def build_data_cmd(
-    output_dir: Path = typer.Option(Path("artifacts/data")),
-    data_dir: Path | None = typer.Option(None),
-    pack_mode: Literal["routed", "full"] = typer.Option("routed"),
-    max_pages: int = typer.Option(28),
-    max_chars: int = typer.Option(120_000),
-    val_fraction: float = typer.Option(0.10),
-    require_casing_and_tops: bool = typer.Option(True),
-    max_docs: int | None = typer.Option(None),
+    output_dir: Annotated[Path, typer.Option()] = Path("artifacts/data"),
+    data_dir: Annotated[Path | None, typer.Option()] = None,
+    pack_mode: Annotated[Literal["routed", "full"], typer.Option()] = "routed",
+    max_pages: Annotated[int, typer.Option()] = 28,
+    max_chars: Annotated[int, typer.Option()] = 120_000,
+    val_fraction: Annotated[float, typer.Option()] = 0.10,
+    require_casing_and_tops: Annotated[bool, typer.Option()] = True,
+    max_docs: Annotated[int | None, typer.Option()] = None,
 ) -> None:
     release_dir = resolve_release_dir(data_dir)
     pack_cfg = PackConfig(mode=pack_mode, max_pages=max_pages, max_chars=max_chars)
@@ -42,22 +42,22 @@ def build_data_cmd(
 
 @app.command("run-eval")
 def run_eval_cmd(
-    output_predictions: Path = typer.Option(Path("outputs/predictions.jsonl")),
-    output_score: Path = typer.Option(Path("outputs/score.json")),
-    raw_log: Path | None = typer.Option(Path("outputs/raw_completions.jsonl")),
-    data_dir: Path | None = typer.Option(None),
-    tasks_jsonl: Path | None = typer.Option(None),
-    base_url: str = typer.Option("http://127.0.0.1:8000/v1"),
-    model: str = typer.Option("Qwen/Qwen2.5-14B-Instruct"),
-    api_key: str = typer.Option("EMPTY"),
-    mode: Literal["open_book", "closed_book"] = typer.Option("open_book"),
-    pack_mode: Literal["routed", "full"] = typer.Option("routed"),
-    max_pages: int = typer.Option(28),
-    max_chars: int = typer.Option(120_000),
-    concurrency: int = typer.Option(4),
-    max_tokens: int = typer.Option(4096),
-    limit: int | None = typer.Option(None),
-    json_mode: bool = typer.Option(True),
+    output_predictions: Annotated[Path, typer.Option()] = Path("outputs/predictions.jsonl"),
+    output_score: Annotated[Path, typer.Option()] = Path("outputs/score.json"),
+    raw_log: Annotated[Path | None, typer.Option()] = Path("outputs/raw_completions.jsonl"),
+    data_dir: Annotated[Path | None, typer.Option()] = None,
+    tasks_jsonl: Annotated[Path | None, typer.Option()] = None,
+    base_url: Annotated[str, typer.Option()] = "http://127.0.0.1:8000/v1",
+    model: Annotated[str, typer.Option()] = "Qwen/Qwen2.5-14B-Instruct",
+    api_key: Annotated[str, typer.Option()] = "EMPTY",
+    mode: Annotated[Literal["open_book", "closed_book"], typer.Option()] = "open_book",
+    pack_mode: Annotated[Literal["routed", "full"], typer.Option()] = "routed",
+    max_pages: Annotated[int, typer.Option()] = 28,
+    max_chars: Annotated[int, typer.Option()] = 120_000,
+    concurrency: Annotated[int, typer.Option()] = 4,
+    max_tokens: Annotated[int, typer.Option()] = 4096,
+    limit: Annotated[int | None, typer.Option()] = None,
+    json_mode: Annotated[bool, typer.Option()] = True,
 ) -> None:
     release_dir = resolve_release_dir(data_dir)
     tasks_path = tasks_jsonl or (release_dir / "eval" / "eval_exploration_recent.jsonl")
@@ -90,9 +90,9 @@ def run_eval_cmd(
 
 @app.command("score")
 def score_cmd(
-    tasks_jsonl: Path = typer.Argument(...),
-    predictions_jsonl: Path = typer.Argument(...),
-    output_json: Path | None = typer.Option(None),
+    tasks_jsonl: Annotated[Path, typer.Argument()],
+    predictions_jsonl: Annotated[Path, typer.Argument()],
+    output_json: Annotated[Path | None, typer.Option()] = None,
 ) -> None:
     report = score_eval_run(tasks_jsonl, predictions_jsonl)
     if output_json is not None:
@@ -104,9 +104,9 @@ def score_cmd(
 
 @app.command("reward-check")
 def reward_check_cmd(
-    tasks_jsonl: Path | None = typer.Option(None),
-    predictions_jsonl: Path | None = typer.Option(None),
-    data_dir: Path | None = typer.Option(None),
+    tasks_jsonl: Annotated[Path | None, typer.Option()] = None,
+    predictions_jsonl: Annotated[Path | None, typer.Option()] = None,
+    data_dir: Annotated[Path | None, typer.Option()] = None,
 ) -> None:
     release_dir = resolve_release_dir(data_dir)
     tasks_path = tasks_jsonl or (release_dir / "eval" / "eval_exploration_recent.jsonl")
@@ -152,18 +152,18 @@ def reward_check_cmd(
 
 @app.command("train-sft")
 def train_sft_cmd(
-    train_jsonl: Path = typer.Option(Path("artifacts/data/sft_train.jsonl")),
-    val_jsonl: Path = typer.Option(Path("artifacts/data/sft_val.jsonl")),
-    model: str = typer.Option("Qwen/Qwen2.5-7B-Instruct"),
-    output_dir: Path = typer.Option(Path("checkpoints/sft")),
-    max_seq_length: int = typer.Option(32768),
-    epochs: float = typer.Option(2.0),
-    learning_rate: float = typer.Option(2e-4),
-    batch_size: int = typer.Option(1),
-    grad_accum: int = typer.Option(8),
-    lora_r: int = typer.Option(32),
-    lora_alpha: int = typer.Option(64),
-    load_in_4bit: bool = typer.Option(False),
+    train_jsonl: Annotated[Path, typer.Option()] = Path("artifacts/data/sft_train.jsonl"),
+    val_jsonl: Annotated[Path, typer.Option()] = Path("artifacts/data/sft_val.jsonl"),
+    model: Annotated[str, typer.Option()] = "Qwen/Qwen2.5-7B-Instruct",
+    output_dir: Annotated[Path, typer.Option()] = Path("checkpoints/sft"),
+    max_seq_length: Annotated[int, typer.Option()] = 32768,
+    epochs: Annotated[float, typer.Option()] = 2.0,
+    learning_rate: Annotated[float, typer.Option()] = 2e-4,
+    batch_size: Annotated[int, typer.Option()] = 1,
+    grad_accum: Annotated[int, typer.Option()] = 8,
+    lora_r: Annotated[int, typer.Option()] = 32,
+    lora_alpha: Annotated[int, typer.Option()] = 64,
+    load_in_4bit: Annotated[bool, typer.Option()] = False,
 ) -> None:
     result = run_sft_training(
         train_jsonl=train_jsonl,
@@ -184,19 +184,19 @@ def train_sft_cmd(
 
 @app.command("train-grpo")
 def train_grpo_cmd(
-    train_jsonl: Path = typer.Option(Path("artifacts/data/rlvr_train.jsonl")),
-    model: str = typer.Option("checkpoints/sft/final"),
-    output_dir: Path = typer.Option(Path("checkpoints/grpo")),
-    max_prompt_length: int = typer.Option(24576),
-    max_completion_length: int = typer.Option(3072),
-    num_generations: int = typer.Option(4),
-    epochs: float = typer.Option(1.0),
-    learning_rate: float = typer.Option(5e-6),
-    batch_size: int = typer.Option(1),
-    grad_accum: int = typer.Option(8),
-    lora_r: int = typer.Option(32),
-    lora_alpha: int = typer.Option(64),
-    beta: float = typer.Option(0.04),
+    train_jsonl: Annotated[Path, typer.Option()] = Path("artifacts/data/rlvr_train.jsonl"),
+    model: Annotated[str, typer.Option()] = "checkpoints/sft/final",
+    output_dir: Annotated[Path, typer.Option()] = Path("checkpoints/grpo"),
+    max_prompt_length: Annotated[int, typer.Option()] = 24576,
+    max_completion_length: Annotated[int, typer.Option()] = 3072,
+    num_generations: Annotated[int, typer.Option()] = 4,
+    epochs: Annotated[float, typer.Option()] = 1.0,
+    learning_rate: Annotated[float, typer.Option()] = 5e-6,
+    batch_size: Annotated[int, typer.Option()] = 1,
+    grad_accum: Annotated[int, typer.Option()] = 8,
+    lora_r: Annotated[int, typer.Option()] = 32,
+    lora_alpha: Annotated[int, typer.Option()] = 64,
+    beta: Annotated[float, typer.Option()] = 0.04,
 ) -> None:
     result = run_grpo_training(
         train_jsonl=train_jsonl,

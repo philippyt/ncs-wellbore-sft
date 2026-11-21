@@ -6,11 +6,12 @@ from wellbore_sft.schema import WellboreExtraction
 
 SYSTEM_PROMPT_OPEN_BOOK = (
     "You are an expert Norwegian Continental Shelf drilling and subsurface data extractor. "
-    "Read the OCR Markdown pages from a single wellbore completion report and return a single valid JSON object "
-    "with keys header, casing_and_lot, formation_tops, and dst. "
+    "Read the OCR Markdown pages from a single wellbore completion report and return a single "
+    "valid JSON object with keys header, casing_and_lot, formation_tops, and dst. "
     "Extract actual as drilled values rather than prognosed or planned values. "
     "Use units m or ft and datums md_rkb, tvd_rkb, or tvd_msl. "
-    "Use lot_unit g/cm3, sg, or ppg when leak off or formation integrity test values are present, else null. "
+    "Use lot_unit g/cm3, sg, or ppg when leak off or formation integrity test values are "
+    "present, else null. "
     "Return only the JSON object with no surrounding prose."
 )
 

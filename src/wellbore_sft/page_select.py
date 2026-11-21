@@ -35,7 +35,9 @@ CATEGORY_PATTERNS: dict[TargetCategory, tuple[tuple[re.Pattern[str], float], ...
         (re.compile(r"\bwater\s+depth\b", re.IGNORECASE), 2.0),
         (re.compile(r"\b(?:total\s+depth|final\s+vertical\s+depth)\b", re.IGNORECASE), 2.0),
         (
-            re.compile(r"\b(?:spud\s+date|rig\s+released|production\s+licen[cs]e)\b", re.IGNORECASE),
+            re.compile(
+                r"\b(?:spud\s+date|rig\s+released|production\s+licen[cs]e)\b", re.IGNORECASE
+            ),
             1.5,
         ),
     ),
@@ -55,7 +57,9 @@ CATEGORY_PATTERNS: dict[TargetCategory, tuple[tuple[re.Pattern[str], float], ...
             2.5,
         ),
         (
-            re.compile(r"\b(?:13\s*3/8|9\s*5/8|20|30)\s*\"?\s*(?:casing|csg|shoe)\b", re.IGNORECASE),
+            re.compile(
+                r"\b(?:13\s*3/8|9\s*5/8|20|30)\s*\"?\s*(?:casing|csg|shoe)\b", re.IGNORECASE
+            ),
             2.5,
         ),
         (
@@ -177,7 +181,9 @@ def score_page(
     )
 
 
-def select_pages(pages: list[dict[str, Any]], config: PackConfig | None = None) -> list[dict[str, Any]]:
+def select_pages(
+    pages: list[dict[str, Any]], config: PackConfig | None = None
+) -> list[dict[str, Any]]:
     cfg = config or PackConfig()
     filtered = [
         p

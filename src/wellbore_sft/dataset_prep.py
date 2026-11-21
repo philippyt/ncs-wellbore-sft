@@ -86,10 +86,9 @@ def build_training_datasets(
         eligible_ids = list(casing_ids & tops_ids)
         candidates = candidates.filter(pl.col("wlbNpdidWellbore").is_in(eligible_ids))
 
-    selected = (
-        candidates.sort(["wlbCompletionYear", "total_pages", "doc_id"], descending=True)
-        .unique(subset=["wlbNpdidWellbore"], keep="first", maintain_order=True)
-    )
+    selected = candidates.sort(
+        ["wlbCompletionYear", "total_pages", "doc_id"], descending=True
+    ).unique(subset=["wlbNpdidWellbore"], keep="first", maintain_order=True)
     if max_docs is not None and max_docs > 0:
         selected = selected.head(max_docs)
 
