@@ -1,6 +1,6 @@
 # Wellbore SFT and RLVR
 
-Long context structured extraction SFT, RLVR GRPO training, and deterministic FactPages evaluation built directly on the NCS wellbore completion Parquet files with zero RAG.
+Long context structured extraction SFT, RLVR GRPO training, and deterministic FactPages evaluation built directly on the NCS wellbore completion Parquet files.
 
 ## Benchmark Results on `eval_exploration_recent` (n = 180)
 
