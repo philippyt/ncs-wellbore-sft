@@ -206,19 +206,20 @@ def run_inkling_sft(
     train_jsonl: Path,
     output_dir: Path,
     model_id: str = INKLING_MODEL_ID,
-    loop_num_passes: int = 3,
+    loop_passes: list[int] | None = None,
     max_prompt_tokens: int = 6656,
     max_target_tokens: int = 1536,
     epochs: int = 1,
     max_steps: int = -1,
     grad_accum: int = 4,
     learning_rate: float = 1.5e-4,
-    lora_r: int = 16,
-    lora_alpha: int = 32,
+    lora_r: int = 32,
+    lora_alpha: int = 64,
     seed: int = 42,
 ) -> dict[str, Any]:
     import torch
 
+    active_passes = loop_passes or [3]
     rows = [orjson.loads(line) for line in train_jsonl.read_bytes().splitlines() if line.strip()]
     rng = random.Random(seed)
     model, tokenizer = load_inkling_model(
@@ -227,7 +228,7 @@ def run_inkling_sft(
         lora_r=lora_r,
         lora_alpha=lora_alpha,
     )
-    set_loop_passes(model, loop_num_passes)
+    set_loop_passes(model, active_passes[0])
 
     trainable = [p for p in model.parameters() if p.requires_grad]
     optimizer = torch.optim.AdamW(trainable, lr=learning_rate, weight_decay=0.01)
@@ -266,6 +267,8 @@ def run_inkling_sft(
             if not t_ids:
                 continue
 
+            chosen_pass = rng.choice(active_passes)
+            set_loop_passes(model, chosen_pass)
             full_ids = torch.tensor([p_ids + t_ids], dtype=torch.long, device="cuda")
             loss = _compute_completion_only_loss(model, full_ids, prompt_len=len(p_ids))
             (loss / grad_accum).backward()
@@ -300,8 +303,9 @@ def run_inkling_sft(
     tokenizer.save_pretrained(str(adapter_dir))
     summary = {
         "model_id": model_id,
-        "loop_num_passes": loop_num_passes,
+        "loop_passes": active_passes,
         "opt_steps": opt_step,
+        "lora_r": lora_r,
         "mean_loss_final20": round(sum(losses[-20:]) / max(len(losses[-20:]), 1), 4),
         "elapsed_seconds": round(time.time() - t_start, 1),
         "adapter_dir": str(adapter_dir),
