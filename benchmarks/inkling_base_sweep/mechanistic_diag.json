@@ -1,0 +1,22 @@
+{
+  "pass_1": {
+    "final_hidden_l2_norm": 197.234,
+    "next_token_entropy": 3.0469,
+    "sample_64_toks": "[PAGE 0]\n[PAGE 1]\n[PAGE 2]\n[PAGE 3]\n[PAGE 4]\n[PAGE 5]\n[PAGE 6]\n[PAGE 7]\n[PAGE 8]\n[PAGE 9]\n[PAGE 10"
+  },
+  "pass_2": {
+    "final_hidden_l2_norm": 202.313,
+    "next_token_entropy": 0.4862,
+    "sample_64_toks": "{\"header\": {\"water_depth 2/7-31\": null, \"water_depth\": 239 ft}, \"water_depth\": 239 ft, \"water_depth_m\": 72.5 m}\": null, \"water_depth\""
+  },
+  "pass_3": {
+    "final_hidden_l2_norm": 275.155,
+    "next_token_entropy": 0.0,
+    "sample_64_toks": "{\"header\":{\"kelly_bushing_m\":47.5,\"water_depth_m\":72.8,\"total_depth\":{\"value\":4968.2,\"unit\":\"m\",\"datum\":\"md_rkb"
+  },
+  "pass_4": {
+    "final_hidden_l2_norm": 155.019,
+    "next_token_entropy": 0.4017,
+    "sample_64_toks": "{\"header\":\":\",\"casing_and_lot\":\":\"}<|end_message|><|message_model|><|content_thinking|>The user wants me to extract the 2/7-31 2/7-31 2/7-31 wellbore 2/7-31. Let me carefully read the"
+  }
+}
