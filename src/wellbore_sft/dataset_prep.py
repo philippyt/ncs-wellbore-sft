@@ -78,6 +78,7 @@ def build_training_datasets(
     require_casing_and_tops: bool = True,
     max_docs: int | None = None,
     basin_filter: str | None = None,
+    exclude_join_issues: bool = True,
 ) -> dict[str, Any]:
     cfg = pack_config or PackConfig()
     dataset_dir = release_dir / "dataset"
@@ -98,6 +99,11 @@ def build_training_datasets(
         & pl.col("wlbNpdidWellbore").is_not_null()
         & (pl.col("total_pages") >= 5)
     )
+    join_issues_path = dataset_dir / "join_issues.parquet"
+    if exclude_join_issues and join_issues_path.exists():
+        bad_doc_ids = pl.read_parquet(join_issues_path)["doc_id"].drop_nulls().unique().to_list()
+        if bad_doc_ids:
+            candidates = candidates.filter(~pl.col("doc_id").is_in(bad_doc_ids))
     if basin_filter:
         candidates = candidates.filter(
             pl.col("wlbMainArea").str.to_uppercase() == basin_filter.strip().upper()

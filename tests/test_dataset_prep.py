@@ -132,3 +132,24 @@ def test_build_training_datasets_no_leakage(tmp_path: Path) -> None:
     row = orjson.loads((out_dir / "sft_train.jsonl").read_bytes().splitlines()[0])
     assert row["doc_id"] == "1/1-1::1"
     assert len(row["messages"]) == 3
+
+    pl.DataFrame(
+        [
+            {
+                "issue_type": "candidate_mislabel_or_rename",
+                "doc_id": "1/1-1::1",
+                "wellbore_name": "1/1-1",
+                "title": "Test",
+                "total_pages": 10,
+                "details": "mismatch",
+            }
+        ]
+    ).write_parquet(dataset_dir / "join_issues.parquet")
+    out_filtered = tmp_path / "artifacts_filtered"
+    manifest_filtered = build_training_datasets(
+        release_dir=tmp_path / "release",
+        output_dir=out_filtered,
+        pack_config=PackConfig(mode="routed", max_pages=10, max_chars=20_000),
+        val_fraction=0.0,
+    )
+    assert manifest_filtered["sft_train_count"] == 0
