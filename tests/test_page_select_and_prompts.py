@@ -55,6 +55,42 @@ def test_score_page_and_select_drops_ocr_loops() -> None:
     assert "[PAGE 5]" in rendered
 
 
+def test_figure_description_drop_and_tag() -> None:
+    pages = [
+        {
+            "page_no": 0,
+            "ocr_markdown": "Well Data Summary. Kelly Bushing 25 m.",
+            "ai_tags": ["well_data"],
+            "has_tables": True,
+            "is_ocr_loop": False,
+            "has_figure_description": False,
+        },
+        {
+            "page_no": 3,
+            "ocr_markdown": "This figure shows casing shoe depths and leak off test 1.5 1.6 1.7.",
+            "ai_tags": ["casing"],
+            "has_tables": False,
+            "is_ocr_loop": False,
+            "has_figure_description": True,
+        },
+        {
+            "page_no": 4,
+            "ocr_markdown": "Casing Summary 13 3/8 shoe at 1500 m. This chart shows pressure.",
+            "ai_tags": ["casing"],
+            "has_tables": True,
+            "is_ocr_loop": False,
+            "has_figure_description": True,
+        },
+    ]
+    selected = select_pages(pages, PackConfig(mode="routed", max_pages=10, max_chars=50_000))
+    selected_nos = [p["page_no"] for p in selected]
+    assert 3 not in selected_nos
+    assert 4 in selected_nos
+    rendered = render_pages_markdown(selected)
+    assert "[PAGE 4 | FIGURE_DESCRIPTION]" in rendered
+    assert "[PAGE 0]\n" in rendered
+
+
 def test_prompt_builders_have_expected_roles() -> None:
     open_msgs = build_extraction_messages("31/2-1", "31/2-1::100", "[PAGE 0]\nhello")
     assert len(open_msgs) == 2

@@ -24,6 +24,7 @@ class PackConfig(BaseModel):
     max_pages: int = 32
     max_chars: int = 140_000
     drop_ocr_loops: bool = True
+    drop_figure_only_descriptions: bool = True
 
 
 class RewardWeights(BaseModel):

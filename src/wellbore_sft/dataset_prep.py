@@ -40,13 +40,28 @@ def load_pages_for_docs(
         .select(["doc_id", "page_no", "ocr_markdown", "ai_tags", "has_tables", "page_quality"])
     )
     flags_path = dataset_dir / "page_flags.parquet"
-    if drop_ocr_loops and flags_path.exists():
-        flags = pl.scan_parquet(flags_path).select(["doc_id", "page_no", "is_ocr_loop"])
-        lazy = lazy.join(flags, on=["doc_id", "page_no"], how="left").with_columns(
-            pl.col("is_ocr_loop").fill_null(False)
-        )
+    if flags_path.exists():
+        flags_schema = pl.scan_parquet(flags_path).collect_schema().names()
+        flag_cols = ["doc_id", "page_no"]
+        if "is_ocr_loop" in flags_schema:
+            flag_cols.append("is_ocr_loop")
+        if "has_figure_description" in flags_schema:
+            flag_cols.append("has_figure_description")
+        flags = pl.scan_parquet(flags_path).select(flag_cols)
+        lazy = lazy.join(flags, on=["doc_id", "page_no"], how="left")
+        if "is_ocr_loop" in flag_cols:
+            lazy = lazy.with_columns(pl.col("is_ocr_loop").fill_null(False))
+        else:
+            lazy = lazy.with_columns(pl.lit(False).alias("is_ocr_loop"))
+        if "has_figure_description" in flag_cols:
+            lazy = lazy.with_columns(pl.col("has_figure_description").fill_null(False))
+        else:
+            lazy = lazy.with_columns(pl.lit(False).alias("has_figure_description"))
     else:
-        lazy = lazy.with_columns(pl.lit(False).alias("is_ocr_loop"))
+        lazy = lazy.with_columns(
+            pl.lit(False).alias("is_ocr_loop"),
+            pl.lit(False).alias("has_figure_description"),
+        )
 
     frame = lazy.collect()
     grouped: dict[str, list[dict[str, Any]]] = {}

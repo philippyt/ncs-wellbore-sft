@@ -213,6 +213,13 @@ def select_pages(
         p
         for p in pages
         if (not cfg.drop_ocr_loops or not bool(p.get("is_ocr_loop", False)))
+        and (
+            not cfg.drop_figure_only_descriptions
+            or not (
+                bool(p.get("has_figure_description", False))
+                and not bool(p.get("has_tables", False))
+            )
+        )
         and str(p.get("ocr_markdown") or "").strip()
     ]
     filtered.sort(key=lambda item: int(item["page_no"]))
@@ -267,5 +274,9 @@ def render_pages_markdown(pages: list[dict[str, Any]]) -> str:
     for page in pages:
         page_no = int(page["page_no"])
         text = str(page.get("ocr_markdown") or "").strip()
-        blocks.append(f"[PAGE {page_no}]\n{text}")
+        is_fig_desc = bool(page.get("has_figure_description", False)) or bool(
+            FIGURE_DESC_RE.search(text)
+        )
+        header = f"[PAGE {page_no} | FIGURE_DESCRIPTION]" if is_fig_desc else f"[PAGE {page_no}]"
+        blocks.append(f"{header}\n{text}")
     return "\n\n".join(blocks)

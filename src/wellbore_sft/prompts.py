@@ -12,6 +12,8 @@ SYSTEM_PROMPT_OPEN_BOOK = (
     "Use units m or ft and datums md_rkb, tvd_rkb, or tvd_msl. "
     "Use lot_unit g/cm3, sg, or ppg when leak off or formation integrity test values are "
     "present, else null. "
+    "Pages tagged FIGURE_DESCRIPTION contain machine written chart descriptions and axis tick "
+    "values; do not treat axis ticks as tabular depths or LOT values. "
     "Return only the JSON object with no surrounding prose."
 )
 
