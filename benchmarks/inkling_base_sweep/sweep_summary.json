@@ -1,0 +1,174 @@
+{
+  "pass_3": {
+    "loop_num_passes": 3,
+    "adapter_dir": null,
+    "all": {
+      "n": 20,
+      "valid_schema_rate": 0.7,
+      "header_accuracy": 0.4875,
+      "casing_f1": 0.4733,
+      "lot_recall": 0.2556,
+      "formation_tops_f1": 0.262,
+      "dst_f1_non_empty": 0.375,
+      "rlvr_reward": 0.4356,
+      "grounded_reward": 0.4403,
+      "ungrounded_rate": 0.0,
+      "mean_gen_seconds": 23.84
+    },
+    "in_basin_north_sea": {
+      "n": 10,
+      "valid_schema_rate": 0.7,
+      "header_accuracy": 0.475,
+      "casing_f1": 0.43,
+      "lot_recall": 0.1905,
+      "formation_tops_f1": 0.2931,
+      "dst_f1_non_empty": 0.5,
+      "rlvr_reward": 0.4294,
+      "grounded_reward": 0.4347,
+      "ungrounded_rate": 0.0,
+      "mean_gen_seconds": 23.82
+    },
+    "ood_norwegian_barents": {
+      "n": 10,
+      "valid_schema_rate": 0.7,
+      "header_accuracy": 0.5,
+      "casing_f1": 0.5167,
+      "lot_recall": 0.3125,
+      "formation_tops_f1": 0.2308,
+      "dst_f1_non_empty": 0.0,
+      "rlvr_reward": 0.4419,
+      "grounded_reward": 0.4459,
+      "ungrounded_rate": 0.0,
+      "mean_gen_seconds": 23.86
+    }
+  },
+  "pass_4": {
+    "loop_num_passes": 4,
+    "adapter_dir": null,
+    "all": {
+      "n": 20,
+      "valid_schema_rate": 0.25,
+      "header_accuracy": 0.0,
+      "casing_f1": 0.0,
+      "lot_recall": 0.0,
+      "formation_tops_f1": 0.0,
+      "dst_f1_non_empty": 0.0,
+      "rlvr_reward": 0.0345,
+      "grounded_reward": 0.0345,
+      "ungrounded_rate": 0.0,
+      "mean_gen_seconds": 30.79
+    },
+    "in_basin_north_sea": {
+      "n": 10,
+      "valid_schema_rate": 0.3,
+      "header_accuracy": 0.0,
+      "casing_f1": 0.0,
+      "lot_recall": 0.0,
+      "formation_tops_f1": 0.0,
+      "dst_f1_non_empty": 0.0,
+      "rlvr_reward": 0.04,
+      "grounded_reward": 0.04,
+      "ungrounded_rate": 0.0,
+      "mean_gen_seconds": 30.78
+    },
+    "ood_norwegian_barents": {
+      "n": 10,
+      "valid_schema_rate": 0.2,
+      "header_accuracy": 0.0,
+      "casing_f1": 0.0,
+      "lot_recall": 0.0,
+      "formation_tops_f1": 0.0,
+      "dst_f1_non_empty": 0.0,
+      "rlvr_reward": 0.029,
+      "grounded_reward": 0.029,
+      "ungrounded_rate": 0.0,
+      "mean_gen_seconds": 30.79
+    }
+  },
+  "pass_2": {
+    "loop_num_passes": 2,
+    "adapter_dir": null,
+    "all": {
+      "n": 20,
+      "valid_schema_rate": 0.0,
+      "header_accuracy": 0.0,
+      "casing_f1": 0.0,
+      "lot_recall": 0.0,
+      "formation_tops_f1": 0.0,
+      "dst_f1_non_empty": 0.0,
+      "rlvr_reward": 0.0,
+      "grounded_reward": 0.0,
+      "ungrounded_rate": 0.0,
+      "mean_gen_seconds": 17.01
+    },
+    "in_basin_north_sea": {
+      "n": 10,
+      "valid_schema_rate": 0.0,
+      "header_accuracy": 0.0,
+      "casing_f1": 0.0,
+      "lot_recall": 0.0,
+      "formation_tops_f1": 0.0,
+      "dst_f1_non_empty": 0.0,
+      "rlvr_reward": 0.0,
+      "grounded_reward": 0.0,
+      "ungrounded_rate": 0.0,
+      "mean_gen_seconds": 16.99
+    },
+    "ood_norwegian_barents": {
+      "n": 10,
+      "valid_schema_rate": 0.0,
+      "header_accuracy": 0.0,
+      "casing_f1": 0.0,
+      "lot_recall": 0.0,
+      "formation_tops_f1": 0.0,
+      "dst_f1_non_empty": 0.0,
+      "rlvr_reward": 0.0,
+      "grounded_reward": 0.0,
+      "ungrounded_rate": 0.0,
+      "mean_gen_seconds": 17.03
+    }
+  },
+  "pass_1": {
+    "loop_num_passes": 1,
+    "adapter_dir": null,
+    "all": {
+      "n": 20,
+      "valid_schema_rate": 0.0,
+      "header_accuracy": 0.0,
+      "casing_f1": 0.0,
+      "lot_recall": 0.0,
+      "formation_tops_f1": 0.0,
+      "dst_f1_non_empty": 0.0,
+      "rlvr_reward": 0.0,
+      "grounded_reward": 0.0,
+      "ungrounded_rate": 0.0,
+      "mean_gen_seconds": 10.1
+    },
+    "in_basin_north_sea": {
+      "n": 10,
+      "valid_schema_rate": 0.0,
+      "header_accuracy": 0.0,
+      "casing_f1": 0.0,
+      "lot_recall": 0.0,
+      "formation_tops_f1": 0.0,
+      "dst_f1_non_empty": 0.0,
+      "rlvr_reward": 0.0,
+      "grounded_reward": 0.0,
+      "ungrounded_rate": 0.0,
+      "mean_gen_seconds": 10.09
+    },
+    "ood_norwegian_barents": {
+      "n": 10,
+      "valid_schema_rate": 0.0,
+      "header_accuracy": 0.0,
+      "casing_f1": 0.0,
+      "lot_recall": 0.0,
+      "formation_tops_f1": 0.0,
+      "dst_f1_non_empty": 0.0,
+      "rlvr_reward": 0.0,
+      "grounded_reward": 0.0,
+      "ungrounded_rate": 0.0,
+      "mean_gen_seconds": 10.11
+    }
+  }
+}
