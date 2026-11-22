@@ -12,6 +12,7 @@ from wellbore_sft.dataset_prep import load_pages_for_docs
 from wellbore_sft.grounding import (
     compute_grounded_rlvr_reward,
     compute_ungrounded_prediction_rate,
+    filter_ground_truth_to_document,
 )
 from wellbore_sft.page_select import render_pages_markdown, select_pages
 from wellbore_sft.prompts import build_extraction_messages
@@ -519,6 +520,7 @@ def evaluate_inkling_passes(
     all_reports: dict[str, Any] = {}
 
     encoded_prompts: list[list[int]] = []
+    visible_prompts: list[str] = []
     for task in tasks:
         did = str(task["doc_id"])
         msgs = build_extraction_messages(
@@ -526,22 +528,27 @@ def evaluate_inkling_passes(
             doc_id=did,
             pages_markdown=packed_md_by_doc[did],
         )
-        encoded_prompts.append(_encode_prompt_safely(tokenizer, msgs, max_prompt_tokens))
+        p_ids = _encode_prompt_safely(tokenizer, msgs, max_prompt_tokens)
+        encoded_prompts.append(p_ids)
+        visible_prompts.append(tokenizer.decode(p_ids, skip_special_tokens=True))
 
     pad_id = int(tokenizer.pad_token_id)
     end_msg_id = tokenizer.convert_tokens_to_ids("<|end_message|>")
     eos_ids = [int(tokenizer.eos_token_id)]
     if isinstance(end_msg_id, int) and end_msg_id >= 0 and end_msg_id not in eos_ids:
         eos_ids.append(end_msg_id)
+    stop_id_set = set(eos_ids) | {pad_id}
 
     for npass in passes:
         set_loop_passes(model, npass)
         per_task_rows: list[dict[str, Any]] = []
+        raw_output_rows: list[dict[str, Any]] = []
         t0 = time.time()
         for start in range(0, len(tasks), batch_size):
             end = min(start + batch_size, len(tasks))
             batch_tasks = tasks[start:end]
             batch_ids = encoded_prompts[start:end]
+            batch_visible = visible_prompts[start:end]
             max_len = max(len(x) for x in batch_ids)
             padded = [[pad_id] * (max_len - len(x)) + x for x in batch_ids]
             attn_mask = [[0] * (max_len - len(x)) + [1] * len(x) for x in batch_ids]
@@ -563,15 +570,27 @@ def evaluate_inkling_passes(
             for bi, task in enumerate(batch_tasks):
                 tid = str(task["task_id"])
                 did = str(task["doc_id"])
-                pages_md = packed_md_by_doc[did]
+                visible_text = batch_visible[bi]
                 new_toks = gen[bi, max_len:].tolist()
-                raw_text = tokenizer.decode(new_toks, skip_special_tokens=True)
+                true_toks: list[int] = []
+                for tok_id in new_toks:
+                    if tok_id in stop_id_set:
+                        break
+                    true_toks.append(tok_id)
+                hit_limit = len(true_toks) >= max_new_tokens
+                raw_text = tokenizer.decode(true_toks, skip_special_tokens=True)
                 parsed = parse_prediction_json(raw_text, tid)
                 pred = parsed.prediction or WellborePrediction(task_id=tid)
                 scored = score_wellbore_prediction(pred, task)
                 raw_reward = compute_rlvr_reward(raw_text, task).reward
+                grounded_task = dict(task)
+                grounded_task["ground_truth"] = filter_ground_truth_to_document(
+                    task["ground_truth"], visible_text
+                )
+                grounded_scored = score_wellbore_prediction(pred, grounded_task)
+                prompt_grounded_reward = compute_rlvr_reward(raw_text, grounded_task).reward
                 grounded_bd, ungrounded_rate = compute_grounded_rlvr_reward(
-                    raw_text, task, pages_md
+                    raw_text, task, visible_text
                 )
                 basin = basin_by_doc.get(did, "UNKNOWN")
                 per_task_rows.append(
@@ -582,7 +601,8 @@ def evaluate_inkling_passes(
                         "is_ood_basin": basin != "NORTH SEA",
                         "valid_json": parsed.valid_json,
                         "valid_schema": parsed.valid_schema,
-                        "gen_tokens": len(new_toks),
+                        "gen_tokens": len(true_toks),
+                        "hit_max_new_tokens": hit_limit,
                         "gen_seconds": round(gen_sec, 3),
                         "header_accuracy": scored["header_accuracy"],
                         "casing_f1": scored["casing_and_lot"]["casing"]["f1"],
@@ -591,8 +611,28 @@ def evaluate_inkling_passes(
                         "dst_expected": scored["dst"]["expected"],
                         "dst_f1": scored["dst"]["f1"],
                         "rlvr_reward": raw_reward,
+                        "prompt_grounded_casing_f1": grounded_scored["casing_and_lot"]["casing"][
+                            "f1"
+                        ],
+                        "prompt_grounded_lot_recall": grounded_scored["casing_and_lot"][
+                            "lot_recall"
+                        ],
+                        "prompt_grounded_tops_f1": grounded_scored["formation_tops"]["f1"],
+                        "prompt_grounded_reward": prompt_grounded_reward,
                         "grounded_reward": grounded_bd.reward,
                         "ungrounded_rate": ungrounded_rate,
+                    }
+                )
+                raw_output_rows.append(
+                    {
+                        "task_id": tid,
+                        "doc_id": did,
+                        "basin": basin,
+                        "gen_tokens": len(true_toks),
+                        "hit_max_new_tokens": hit_limit,
+                        "valid_json": parsed.valid_json,
+                        "valid_schema": parsed.valid_schema,
+                        "raw_text": raw_text,
                     }
                 )
             print(
@@ -606,6 +646,7 @@ def evaluate_inkling_passes(
         summary = {
             "loop_num_passes": npass,
             "adapter_dir": str(adapter_dir) if adapter_dir else None,
+            "max_new_tokens": max_new_tokens,
             "all": _aggregate_subset(per_task_rows),
             "in_basin_north_sea": _aggregate_subset(
                 [r for r in per_task_rows if not r["is_ood_basin"]]
@@ -618,6 +659,10 @@ def evaluate_inkling_passes(
         (output_dir / f"eval_pass_{npass}.json").write_bytes(
             orjson.dumps(summary, option=orjson.OPT_INDENT_2)
         )
+        with (output_dir / f"raw_outputs_pass_{npass}.jsonl").open("wb") as handle:
+            for raw_row in raw_output_rows:
+                handle.write(orjson.dumps(raw_row))
+                handle.write(b"\n")
         all_reports[f"pass_{npass}"] = {k: v for k, v in summary.items() if k != "per_task"}
 
     (output_dir / "sweep_summary.json").write_bytes(
@@ -631,16 +676,34 @@ def _aggregate_subset(rows: list[dict[str, Any]]) -> dict[str, Any]:
     if n == 0:
         return {"n": 0}
     lot_vals = [float(r["lot_recall"]) for r in rows if r["lot_recall"] is not None]
+    pg_lot_vals = [
+        float(r["prompt_grounded_lot_recall"])
+        for r in rows
+        if r.get("prompt_grounded_lot_recall") is not None
+    ]
     dst_vals = [float(r["dst_f1"]) for r in rows if r["dst_expected"] > 0]
     return {
         "n": n,
         "valid_schema_rate": round(sum(1 for r in rows if r["valid_schema"]) / n, 4),
+        "hit_limit_count": sum(1 for r in rows if r.get("hit_max_new_tokens")),
         "header_accuracy": round(sum(float(r["header_accuracy"]) for r in rows) / n, 4),
         "casing_f1": round(sum(float(r["casing_f1"]) for r in rows) / n, 4),
         "lot_recall": round(sum(lot_vals) / len(lot_vals), 4) if lot_vals else 0.0,
         "formation_tops_f1": round(sum(float(r["formation_tops_f1"]) for r in rows) / n, 4),
         "dst_f1_non_empty": round(sum(dst_vals) / len(dst_vals), 4) if dst_vals else 0.0,
         "rlvr_reward": round(sum(float(r["rlvr_reward"]) for r in rows) / n, 4),
+        "prompt_grounded_casing_f1": round(
+            sum(float(r.get("prompt_grounded_casing_f1", 0.0)) for r in rows) / n, 4
+        ),
+        "prompt_grounded_lot_recall": round(sum(pg_lot_vals) / len(pg_lot_vals), 4)
+        if pg_lot_vals
+        else 0.0,
+        "prompt_grounded_tops_f1": round(
+            sum(float(r.get("prompt_grounded_tops_f1", 0.0)) for r in rows) / n, 4
+        ),
+        "prompt_grounded_reward": round(
+            sum(float(r.get("prompt_grounded_reward", 0.0)) for r in rows) / n, 4
+        ),
         "grounded_reward": round(sum(float(r["grounded_reward"]) for r in rows) / n, 4),
         "ungrounded_rate": round(sum(float(r["ungrounded_rate"]) for r in rows) / n, 4),
         "mean_gen_seconds": round(sum(float(r["gen_seconds"]) for r in rows) / n, 2),
